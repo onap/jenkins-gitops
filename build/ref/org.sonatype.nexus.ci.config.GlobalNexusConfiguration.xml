@@ -1,0 +1,19 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<!--
+  SPDX-License-Identifier: Apache-2.0
+  SPDX-FileCopyrightText: 2026 ONAP Contributors
+-->
+<!--
+  Seeded into JENKINS_HOME on first start (see build/Dockerfile).
+
+  On an empty JENKINS_HOME the Nexus Platform plugin (3.16.481) constructor
+  finds no instanceId, calls save(), and that fires the Datadog
+  SaveableListener while extensions are still loading. Guice then fails with
+  a circular dependency, the extension is skipped, and the plugin's startup
+  migrator aborts the whole boot. Providing the instanceId up front avoids
+  the save() call. JCasC (base/jenkins/jcasc/20-unclassified.yaml) still
+  owns the full configuration, including this same instanceId.
+-->
+<org.sonatype.nexus.ci.config.GlobalNexusConfiguration>
+  <instanceId>a2ceaf056d07477eb415b0d33f3fb3fb</instanceId>
+</org.sonatype.nexus.ci.config.GlobalNexusConfiguration>

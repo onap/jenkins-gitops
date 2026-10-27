@@ -1,0 +1,14 @@
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-FileCopyrightText: 2026 ONAP Contributors
+# Plugins installed but disabled on jenkins.onap.org today.
+# The Dockerfile creates <name>.jpi.disabled markers for each entry.
+ace-editor
+checkstyle
+cvs
+findbugs
+handlebars
+icon-shim
+jquery-detached
+momentjs
+pipeline-model-declarative-agent
+workflow-cps-global-lib
