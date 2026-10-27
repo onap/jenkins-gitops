@@ -1,0 +1,122 @@
+---
+# SPDX-FileCopyrightText: 2026 ONAP Contributors
+# SPDX-License-Identifier: Apache-2.0
+
+name-template: "v$RESOLVED_VERSION"
+tag-template: "v$RESOLVED_VERSION"
+change-template: "- $TITLE @$AUTHOR (#$NUMBER)"
+sort-direction: ascending
+# Category labels live under 'when', and each category carries its own
+# 'semver-increment', per the release-drafter v7 category schema:
+# https://github.com/release-drafter/release-drafter/pull/1558
+#
+# 'exclusive: true' stops a change matching more than one category.
+# Categories evaluate in definition order, so the first match wins and
+# later categories skip that change. Dependabot bumps previously
+# appeared twice (Dependabot applies 'dependencies'/'github_actions'
+# while the autolabeler adds 'CI' for the 'CI(actions):' title prefix),
+# matching both Maintenance and Code Quality.
+#
+# Ordering is deliberate: increments run major -> minor -> patch, so
+# the first match is always the highest increment a change qualifies
+# for and exclusivity cannot lower a resolved version.
+categories:
+  - title: "💥 Breaking Change 💥"
+    semver-increment: "major"
+    exclusive: true
+    when:
+      labels:
+        - "breaking-change"
+  - title: "✨ New Features ✨"
+    semver-increment: "minor"
+    exclusive: true
+    when:
+      labels:
+        - "enhancement"
+        - "feature"
+  - title: "🐛 Bug Fixes 🐛"
+    semver-increment: "patch"
+    exclusive: true
+    when:
+      labels:
+        - "fix"
+        - "bugfix"
+        - "bug"
+  - title: "⚡ Performance ⚡"
+    semver-increment: "patch"
+    exclusive: true
+    when:
+      labels:
+        - "performance"
+  - title: "🔧 Maintenance 🔧"
+    semver-increment: "patch"
+    exclusive: true
+    when:
+      labels:
+        - "chore"
+        - "documentation"
+        - "maintenance"
+        - "repo"
+        - "dependencies"
+        - "github_actions"
+        - "refactor"
+        - "style"
+        - "build"
+        - "revert"
+  - title: "🎓 Code Quality 🎓"
+    semver-increment: "patch"
+    exclusive: true
+    when:
+      labels:
+        - "code-quality"
+        - "CI"
+        - "test"
+autolabeler:
+  - label: "breaking-change"
+    title:
+      - '/^[a-z]+(\([^)]+\))?!:/i'
+  - label: "feature"
+    title:
+      - '/^feat(\([^)]+\))?:/i'
+  - label: "bug"
+    title:
+      - '/^fix(\([^)]+\))?:/i'
+  - label: "refactor"
+    title:
+      - '/^refactor(\([^)]+\))?:/i'
+  - label: "code-quality"
+    title:
+      - '/^test(\([^)]+\))?:/i'
+  - label: "CI"
+    title:
+      - '/^ci(\([^)]+\))?:/i'
+  - label: "chore"
+    title:
+      - '/^chore(\([^)]+\))?:/i'
+  - label: "documentation"
+    title:
+      - '/^docs(\([^)]+\))?:/i'
+  - label: "style"
+    title:
+      - '/^style(\([^)]+\))?:/i'
+  - label: "performance"
+    title:
+      - '/^perf(\([^)]+\))?:/i'
+  - label: "revert"
+    title:
+      - '/^revert(\([^)]+\))?:/i'
+  - label: "build"
+    title:
+      - '/^build(\([^)]+\))?:/i'
+# The per-increment label lists moved onto the categories above; only
+# the fallback for changes matching no category remains here.
+version-resolver:
+  default: patch
+# yamllint disable rule:line-length
+template: |
+  [![Downloads for this release](https://img.shields.io/github/downloads/$OWNER/$REPOSITORY/v$RESOLVED_VERSION/total.svg)](https://github.com/$OWNER/$REPOSITORY/releases/tag/v$RESOLVED_VERSION)
+
+  $CHANGES
+
+  ## Links
+  - [Submit bugs/feature requests](https://github.com/$OWNER/$REPOSITORY/issues)
