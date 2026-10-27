@@ -36,6 +36,9 @@ jobs:
         uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e  # v10.3.2
 
       - name: Run hooks
+        env:
+          # Guards local commits only; CI checks out main itself.
+          SKIP: no-commit-to-branch
         run: uvx prek run --all-files --show-diff-on-failure
 
   zizmor:
