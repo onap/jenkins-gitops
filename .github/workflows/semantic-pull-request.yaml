@@ -1,0 +1,67 @@
+---
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-FileCopyrightText: 2026 ONAP Contributors
+
+name: 'Semantic Pull Request 🛠️'
+
+# yamllint disable-line rule:truthy
+on:
+  # Not supported when workflow contains: amannn/action-semantic-pull-request
+  # workflow_dispatch:
+  pull_request:
+    types: [opened, reopened, edited, synchronize]
+
+permissions: {}
+
+# Scope the group to this check, not to '${{ github.workflow }}'.
+# github.workflow resolves to the workflow NAME, so any workflow in the
+# target repository sharing this one's name would share the group and
+# one of the two would be cancelled before running. The 'org-' prefix
+# keeps this organisation-level copy clear of a repository's own
+# caller, which names its group after the check alone.
+concurrency:
+  group: 'org-semantic-pull-request-${{ github.ref }}'
+  # Do NOT cancel, and queue rather than replace.
+  #
+  # Back-to-back 'edited' and 'synchronize' events otherwise leave a
+  # cancelled check run beside a successful one for the same head SHA.
+  # The merge box then reads "Some checks were not successful", and
+  # where a repository makes this a required status check, ruleset
+  # evaluation blocks on the cancelled run even though the check
+  # passed.
+  #
+  # cancel-in-progress alone is not enough. The default queue is
+  # 'single', which holds one pending run and cancels it when a third
+  # event arrives, so a burst still leaves a cancellation behind.
+  # 'queue: max' holds up to 100 and runs them in order. The two
+  # settings are complementary: 'queue: max' cannot be combined with
+  # 'cancel-in-progress: true', which is a validation error.
+  #
+  # The check takes seconds, so running every superseded event through
+  # to completion costs almost nothing.
+  cancel-in-progress: false
+  queue: max
+
+jobs:
+  semantic-pull-request:
+    name: "Semantic Pull Request"
+    # Delegate to the shared reusable workflow, which tolerates
+    # Dependabot's truncated single-commit subjects for long dependency
+    # names that otherwise trip validateSingleCommitMatchesPrTitle.
+    # This file is the canonical copy injected org-wide by the
+    # mandatory-workflows ruleset, so the fix reaches every repository.
+    #
+    # Migrated from lfit/releng-reusable-workflows, which is retiring.
+    # The reusable's job is still named 'Semantic Pull Request', so the
+    # check run stays 'Semantic Pull Request / Semantic Pull Request'
+    # and any ruleset naming it keeps matching.
+    #
+    # Every input is optional and defaults to the organisation's
+    # Conventional Commits policy, so this caller passes none. See
+    # generic-workflows' docs/semantic-pull-request.md for the
+    # reference.
+    # yamllint disable-line rule:line-length
+    uses: lfreleng-actions/generic-workflows/.github/workflows/semantic-pull-request.yaml@0ed9c16d59a3ff92afad23a7c1aba3ab61238b87  # v0.4.3
+    permissions:
+      contents: read
+      pull-requests: read  # Gate step queries the PR API (avoids 403)

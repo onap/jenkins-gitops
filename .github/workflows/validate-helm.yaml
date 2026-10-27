@@ -1,0 +1,85 @@
+---
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-FileCopyrightText: 2026 ONAP Contributors
+
+# Renders the wrapper chart for every environment: helm lint, helm template
+# and kubeconform schema validation of the result.
+
+name: Validate Helm
+
+"on":
+  push:
+    branches: [main]
+    paths:
+      - "base/jenkins/**"
+      - "sandbox/**"
+      - "production/**"
+      - "local/values.yaml"
+      - ".github/workflows/validate-helm.yaml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "base/jenkins/**"
+      - "sandbox/**"
+      - "production/**"
+      - "local/values.yaml"
+      - ".github/workflows/validate-helm.yaml"
+
+permissions: {}
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  helm:
+    name: ${{ matrix.environment }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        environment: [local, sandbox, production]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Install Helm
+        uses: azure/setup-helm@9bc31f4ebc9c6b171d7bfbaa5d006ae7abdb4310  # v5.0.1
+        with:
+          version: v3.19.0
+
+      - name: Build chart dependencies
+        run: |
+          set -euo pipefail
+          helm repo add jenkins https://charts.jenkins.io
+          helm dependency build base/jenkins
+
+      - name: Lint
+        env:
+          ENVIRONMENT: ${{ matrix.environment }}
+        run: helm lint base/jenkins -f "$ENVIRONMENT/values.yaml"
+
+      - name: Template
+        env:
+          ENVIRONMENT: ${{ matrix.environment }}
+        run: |
+          helm template jenkins base/jenkins -n "jenkins-$ENVIRONMENT" \
+            -f "$ENVIRONMENT/values.yaml" > rendered.yaml
+
+      - name: Validate with kubeconform
+        run: |
+          set -euo pipefail
+          version=0.7.0
+          tarball=kubeconform-linux-amd64.tar.gz
+          sha256=c31518ddd122663b3f3aa874cfe8178cb0988de944f29c74a0b9260920d115d3
+          curl -fsSLo "$tarball" \
+            "https://github.com/yannh/kubeconform/releases/download/v$version/$tarball"
+          echo "$sha256  $tarball" | sha256sum -c -
+          tar -xzf "$tarball"
+          # ExternalSecret is a CRD without a schema in kubeconform's catalog.
+          ./kubeconform -strict -summary -skip ExternalSecret rendered.yaml

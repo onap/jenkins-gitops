@@ -1,0 +1,72 @@
+---
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-FileCopyrightText: 2026 ONAP Contributors
+
+# Builds the Jenkins controller image from build/ and, on main, pushes it to
+# ghcr.io/onap/jenkins. Tags: <jenkins version>-<short sha> (immutable, what
+# the environments pin) and <jenkins version>.
+
+name: Build Jenkins Image
+
+"on":
+  push:
+    branches: [main]
+    paths: ["build/**", ".github/workflows/build-jenkins-image.yaml"]
+  pull_request:
+    branches: [main]
+    paths: ["build/**", ".github/workflows/build-jenkins-image.yaml"]
+
+permissions: {}
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build and push
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: read
+      packages: write  # push the image to ghcr.io
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Read the Jenkins version from the Dockerfile
+        id: version
+        run: |
+          set -euo pipefail
+          version="$(sed -nE 's/^FROM jenkins\/jenkins:([0-9.]+)-.*/\1/p' build/Dockerfile)"
+          test -n "$version"
+          echo "jenkins=$version" >> "$GITHUB_OUTPUT"
+          echo "short_sha=${GITHUB_SHA::7}" >> "$GITHUB_OUTPUT"
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069  # v4.4.1
+
+      - name: Log in to GHCR
+        if: github.event_name == 'push'
+        uses: docker/login-action@81c6f93d4bc991e510b342a00b419b3bb4efc5c6  # v4.7.0
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build (and push on main)
+        uses: docker/build-push-action@c3c9e263c25d99ce0380d002d59b67737d91b0dc  # v7.4.0
+        with:
+          context: build
+          push: ${{ github.event_name == 'push' }}
+          tags: |
+            ghcr.io/${{ github.repository_owner }}/jenkins:${{ steps.version.outputs.jenkins }}-${{ steps.version.outputs.short_sha }}
+            ghcr.io/${{ github.repository_owner }}/jenkins:${{ steps.version.outputs.jenkins }}
+          labels: |
+            org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}
+            org.opencontainers.image.revision=${{ github.sha }}
+            org.opencontainers.image.version=${{ steps.version.outputs.jenkins }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
