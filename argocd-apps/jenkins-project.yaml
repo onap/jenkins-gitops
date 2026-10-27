@@ -1,0 +1,26 @@
+---
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-FileCopyrightText: 2026 ONAP Contributors
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: jenkins
+  namespace: argocd
+spec:
+  description: ONAP Jenkins controllers
+  sourceRepos:
+    - https://github.com/onap/jenkins-gitops
+    - https://charts.jenkins.io
+  destinations:
+    - namespace: argocd
+      server: https://kubernetes.default.svc
+    - namespace: jenkins-sandbox
+      server: https://kubernetes.default.svc
+    - namespace: jenkins-production
+      server: https://kubernetes.default.svc
+  clusterResourceWhitelist:
+    - group: ""
+      kind: Namespace
+  namespaceResourceWhitelist:
+    - group: "*"
+      kind: "*"

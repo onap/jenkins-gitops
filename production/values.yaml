@@ -1,0 +1,60 @@
+---
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-FileCopyrightText: 2026 ONAP Contributors
+# Production: jenkins.onap.org
+#
+# Sizing mirrors the current VM: 4 CPUs, 16 GiB RAM, JVM -Xmx6G -Xms2G,
+# 64 GiB used in JENKINS_HOME (33 GiB of it under jobs/).
+#
+# Pending infrastructure decisions (Vexxhost cluster does not exist yet):
+#   - persistence.storageClass
+#   - ingress class and TLS issuer
+#   - the external hostname (jenkins.onap.org assumed; DNS cut-over is a
+#     migration step)
+#   - the image tag, once the first image is published by CI
+
+jenkins:
+  controller:
+    image:
+      tag: "2.462.3"
+
+    resources:
+      requests:
+        cpu: "2"
+        memory: 8Gi
+      limits:
+        cpu: "4"
+        memory: 12Gi
+
+    containerEnv:
+      - name: SECRETS
+        value: /run/secrets/jcasc
+      - name: GERRIT_AUTH_KEY_FILE
+        value: /run/secrets/jcasc/gerrit-trigger-ssh-key
+      - name: JENKINS_JVM_HEAP
+        value: -Xmx6G -Xms2G
+      # Values consumed by base/jenkins/jcasc/*.yaml.
+      # Source: ci-management/jenkins-config/global-vars-production.sh
+      - name: JENKINS_URL
+        value: https://jenkins.onap.org/
+      - name: JENKINS_ADMIN_ADDRESS
+        value: Jenkins <donotreply@jenkins.onap.org>
+      - name: SILO
+        value: production
+      - name: JENKINS_HOSTNAME
+        value: vex-yul-ecomp-jenkins-1
+      - name: SIGUL_KEY
+        value: onap-release-2020
+      - name: MASTER_RTD_PROJECT
+        value: doc
+
+    ingress:
+      hostName: jenkins.onap.org
+      path: /
+      tls:
+        - secretName: jenkins-tls
+          hosts:
+            - jenkins.onap.org
+
+  persistence:
+    size: 200Gi

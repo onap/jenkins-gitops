@@ -1,0 +1,23 @@
+---
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-FileCopyrightText: 2026 ONAP Contributors
+# Root ArgoCD Application (app-of-apps). The cluster's infrastructure repo
+# applies this one object; ArgoCD then creates everything under argocd-apps/.
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: jenkins-apps
+  namespace: argocd
+spec:
+  project: jenkins
+  source:
+    repoURL: https://github.com/onap/jenkins-gitops
+    targetRevision: main
+    path: argocd-apps
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

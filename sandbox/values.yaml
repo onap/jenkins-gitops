@@ -1,0 +1,68 @@
+---
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-FileCopyrightText: 2026 ONAP Contributors
+# Sandbox: jenkins.onap.org/sandbox
+#
+# Same controller image and JCasC as production. Differences come from
+# ci-management/jenkins-config/global-vars-sandbox.sh (SILO, JENKINS_HOSTNAME,
+# SIGUL_KEY, MASTER_RTD_PROJECT) and the /sandbox URL prefix.
+#
+# Not yet captured (needs a sandbox API token to export its JCasC):
+#   - the sandbox-specific credential mappings
+#     (ci-management/.../customizedCredentialMappings.sandbox.yaml)
+#   - the lower OpenStack instance cap (cloud.cfg SANDBOX_CAP=4)
+#
+# Pending infrastructure decisions (Vexxhost cluster does not exist yet):
+#   - persistence.storageClass
+#   - ingress class and TLS issuer
+#   - the external hostname (jenkins.onap.org/sandbox assumed)
+#   - the image tag, once the first image is published by CI
+
+jenkins:
+  controller:
+    image:
+      tag: "2.462.3"
+
+    # Served under https://jenkins.onap.org/sandbox/ today.
+    jenkinsUriPrefix: /sandbox
+
+    resources:
+      requests:
+        cpu: "1"
+        memory: 4Gi
+      limits:
+        cpu: "2"
+        memory: 6Gi
+
+    containerEnv:
+      - name: SECRETS
+        value: /run/secrets/jcasc
+      - name: GERRIT_AUTH_KEY_FILE
+        value: /run/secrets/jcasc/gerrit-trigger-ssh-key
+      - name: JENKINS_JVM_HEAP
+        value: -Xmx3G -Xms1G
+      # Values consumed by base/jenkins/jcasc/*.yaml.
+      # Source: ci-management/jenkins-config/global-vars-sandbox.sh
+      - name: JENKINS_URL
+        value: https://jenkins.onap.org/sandbox/
+      - name: JENKINS_ADMIN_ADDRESS
+        value: Jenkins <donotreply@jenkins.onap.org>
+      - name: SILO
+        value: sandbox
+      - name: JENKINS_HOSTNAME
+        value: vex-yul-ecomp-jenkins-2
+      - name: SIGUL_KEY
+        value: onap-sandbox
+      - name: MASTER_RTD_PROJECT
+        value: doc-test
+
+    ingress:
+      hostName: jenkins.onap.org
+      path: /sandbox
+      tls:
+        - secretName: jenkins-sandbox-tls
+          hosts:
+            - jenkins.onap.org
+
+  persistence:
+    size: 50Gi

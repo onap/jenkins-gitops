@@ -1,0 +1,28 @@
+---
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-FileCopyrightText: 2026 ONAP Contributors
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: jenkins-production
+  namespace: argocd
+spec:
+  project: jenkins
+  source:
+    repoURL: https://github.com/onap/jenkins-gitops
+    targetRevision: main
+    path: base/jenkins
+    helm:
+      releaseName: jenkins
+      valueFiles:
+        - values.yaml
+        - ../../production/values.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: jenkins-production
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
