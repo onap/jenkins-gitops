@@ -1,0 +1,10 @@
+version = 1
+
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-FileCopyrightText: 2026 ONAP Contributors
+
+# Files that cannot carry a header of their own.
+[[annotations]]
+path = ["base/jenkins/Chart.lock"]
+SPDX-License-Identifier = "Apache-2.0"
+SPDX-FileCopyrightText = "2026 ONAP Contributors"

@@ -1,0 +1,22 @@
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-FileCopyrightText: 2026 ONAP Contributors
+
+# Helm artifacts
+*.tgz
+charts/
+tmpcharts/
+
+# Rendered output and local scratch
+*.log
+*.out
+rendered.*
+casc-smoke-test.log
+
+# Editor and system files
+.DS_Store
+*.swp
+.vscode/
+
+# Python bytecode
+__pycache__/
+*.pyc

@@ -1,0 +1,28 @@
+---
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-FileCopyrightText: 2026 ONAP Contributors
+
+extends: default
+
+# base/jenkins/jcasc/ is generated from the live JCasC export and carries
+# long literal values (IdP metadata, scripts, settings.xml bodies).
+ignore: |
+  base/jenkins/jcasc/
+  base/jenkins/charts/
+
+rules:
+  empty-lines:
+    max-end: 1
+  comments:
+    min-spaces-from-content: 1
+    level: error
+  line-length:
+    max: 120
+    level: warning
+  indentation:
+    spaces: 2
+    indent-sequences: consistent
+  document-start:
+    present: true
+  truthy:
+    allowed-values: ['true', 'false', 'yes', 'no']
