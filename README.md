@@ -6,12 +6,14 @@ SPDX-FileCopyrightText: 2026 ONAP Contributors
 # ONAP Jenkins GitOps
 
 Declarative deployment of the ONAP Jenkins controllers
-(<https://jenkins.onap.org>, <https://jenkins.onap.org/sandbox>) on
-Kubernetes with ArgoCD, Helm and Jenkins Configuration as Code (JCasC).
+(<https://jenkins.onap.org>, <https://jenkins.onap.org/sandbox>) on a
+Kubernetes cluster running on OpenStack (Vexxhost), with ArgoCD, Helm and
+Jenkins Configuration as Code (JCasC). The build agents stay OpenStack
+VMs in the same cloud, managed by the Jenkins OpenStack Cloud plugin.
 
 Git holds the desired state. A separate infrastructure repository
-provisions the cluster, ArgoCD and the External Secrets Operator; this
-repository holds everything that describes Jenkins itself.
+provisions the OpenStack cluster and ArgoCD; this repository holds
+everything that describes Jenkins itself.
 
 ## Layout
 
@@ -36,11 +38,11 @@ repository holds everything that describes Jenkins itself.
    `base/jenkins/jcasc/` into a ConfigMap.
 2. The Jenkins chart's config-reload sidecar writes them into the pod and
    asks Jenkins to reload JCasC. A config change needs no restart.
-3. Secrets stay out of Git. `templates/external-secret.yaml` asks the
-   External Secrets Operator for one Kubernetes Secret,
-   `jenkins-jcasc-secrets`, with one entry per line of `secret-keys.txt`.
-   The pod mounts it at `/run/secrets/jcasc`, and JCasC resolves `${key}`
-   from the file of that name.
+3. Secrets stay out of Git. The pod mounts one Kubernetes Secret,
+   `jenkins-jcasc-secrets`, at `/run/secrets/jcasc`, with one entry per
+   line of `secret-keys.txt`. JCasC resolves `${key}` from the file of
+   that name. Which tool fills that Secret on the OpenStack cluster is
+   still an open decision; the chart fixes its name and keys.
 4. `<env>/values.yaml` sets environment-specific values (`SILO`,
    `JENKINS_URL`, heap size, ...) as container environment variables.
 
@@ -63,19 +65,21 @@ Requirements: `docker`, `k3d`, `kubectl`, `helm`.
 ```sh
 docker build -t onap-jenkins:local build   # image with all plugins
 scripts/casc-smoke-test.sh                 # ~3 min: does JCasC load?
-local/cluster-up.sh                        # k3d + ArgoCD + ESO + Jenkins
+local/cluster-up.sh                        # k3d + ArgoCD + Jenkins
 ```
 
-`cluster-up.sh` installs ArgoCD and External Secrets the way the
-infrastructure repository will, publishes the working tree to a small git
+`cluster-up.sh` installs ArgoCD, publishes the working tree to a small git
 server inside the cluster, and lets ArgoCD deploy `local/values.yaml`.
 Jenkins answers at <http://localhost:8080> (admin / admin), ArgoCD at
 <http://localhost:8081>. Run `local/cluster-up.sh sync` after editing
 files and `local/cluster-up.sh down` to delete the cluster.
 
 The local environment swaps SAML for a local admin: it excludes
-`15-auth.yaml` and adds `zz-local-auth`. An ESO `fake` store serves dummy
-secrets. Everything else matches sandbox and production.
+`15-auth.yaml` and adds `zz-local-auth`. For the Secret it uses a
+stand-in: External Secrets Operator with its `fake` provider, fed with
+dummy values for every key (`local/make-fake-secret-store.sh`). That is a
+test convenience, not the chosen secret solution. Everything else matches
+sandbox and production.
 
 ## Making a change
 
@@ -85,7 +89,7 @@ secrets. Everything else matches sandbox and production.
 | --- | --- |
 | Jenkins version or plugins | `build/Dockerfile`, `build/plugins.txt`; CI publishes `ghcr.io/onap/jenkins:<version>-<sha>`; pin it in `<env>/values.yaml` |
 | Node templates (OpenStack) | `base/jenkins/jcasc/40-clouds.yaml` |
-| Credentials | `base/jenkins/jcasc/50-credentials.yaml` and `secret-keys.txt`; the value goes into the secret store |
+| Credentials | `base/jenkins/jcasc/50-credentials.yaml` and `secret-keys.txt`; the value goes into `jenkins-jcasc-secrets` |
 | Managed files, Maven settings | `base/jenkins/jcasc/60-*.yaml`, `61-*.yaml` |
 | Permissions, SAML | `base/jenkins/jcasc/15-auth.yaml` |
 | Sizing, URLs, ingress | `<env>/values.yaml` |
@@ -98,9 +102,13 @@ Before pushing, run `prek run --files <changed files>`,
 
 ## Known gaps
 
-- Storage class, ingress class, TLS issuer, hostnames and the secret store
-  name depend on the Vexxhost cluster, which does not exist yet. The values
-  files mark each one.
+- The tool that fills `jenkins-jcasc-secrets` is still an open decision.
+  The chart ships an optional ExternalSecret template
+  (`externalSecrets.enabled`, off by default) that the local environment
+  uses; the real cluster may use it or something else.
+- Storage class, ingress class, TLS issuer and hostnames depend on the
+  OpenStack cluster, which does not exist yet. The values files mark each
+  one.
 - The sandbox JCasC export needs a sandbox API token. Until then the
   sandbox values come from
   `ci-management/jenkins-config/global-vars-sandbox.sh`.
