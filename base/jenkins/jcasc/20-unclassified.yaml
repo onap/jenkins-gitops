@@ -1,0 +1,217 @@
+---
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-FileCopyrightText: 2026 ONAP Contributors
+#
+# Generated from the JCasC export of jenkins.onap.org (Jenkins 2.462.3).
+# Secret values are ${key} references resolved from the SECRETS directory.
+unclassified:
+  buildDiscarders:
+    configuredBuildDiscarders:
+    - jobBuildDiscarder
+  buildFailureAnalyzer:
+    doNotAnalyzeAbortedJob: false
+    gerritTriggerEnabled: true
+    globalEnabled: true
+    graphsEnabled: false
+    knowledgeBase: localFile
+    maxLogSize: 0
+    metricSquashingEnabled: false
+    noCausesEnabled: true
+    noCausesMessage: No problems were identified. If you know why this problem occurred, please add a suitable Cause for it.
+    nrOfScanThreads: 3
+    slackFailureCategories: ALL
+    slackNotifEnabled: false
+    testResultParsingEnabled: false
+  buildStepOperation:
+    enabled: false
+  buildTimestamp:
+    enableBuildTimestamp: true
+    pattern: yyyy-MM-dd HH:mm:ss z
+    timezone: UTC
+  datadogGlobalConfiguration:
+    cacheBuildRuns: true
+    ciInstanceName: jenkins
+    collectBuildLogs: false
+    collectBuildTraces: false
+    datadogClientConfiguration:
+      datadogAgentConfiguration:
+        agentHost: localhost
+        agentPort: 8125
+        agentTraceCollectionPort: 8126
+    emitConfigChangeEvents: false
+    emitSecurityEvents: true
+    emitSystemEvents: true
+    enableCiVisibility: false
+    refreshDogstatsdClient: false
+    reportWith: DSD
+    showDatadogLinks: true
+    targetHost: localhost
+    targetPort: 8125
+    targetTraceCollectionPort: 8126
+    traceServiceName: jenkins
+    useAwsInstanceHostname: false
+  defaultFolderConfiguration:
+    healthMetrics:
+    - worstChildHealthMetric:
+        recursive: true
+  email-ext:
+    adminRequiredForTemplateTesting: false
+    allowUnregisteredEnabled: false
+    charset: UTF-8
+    debugMode: false
+    defaultBody: |-
+      $PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:
+
+      Check console output at $BUILD_URL to view the results.
+    defaultContentType: text/plain
+    defaultRecipients: jenkins@lists.onap.org
+    defaultSubject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!'
+    defaultTriggerIds:
+    - hudson.plugins.emailext.plugins.trigger.AbortedTrigger
+    - hudson.plugins.emailext.plugins.trigger.FirstFailureTrigger
+    - hudson.plugins.emailext.plugins.trigger.SecondFailureTrigger
+    - hudson.plugins.emailext.plugins.trigger.FailureTrigger
+    - hudson.plugins.emailext.plugins.trigger.StillFailingTrigger
+    - hudson.plugins.emailext.plugins.trigger.XNthFailureTrigger
+    - hudson.plugins.emailext.plugins.trigger.BuildingTrigger
+    - hudson.plugins.emailext.plugins.trigger.FixedTrigger
+    - hudson.plugins.emailext.plugins.trigger.NotBuiltTrigger
+    maxAttachmentSize: -1
+    maxAttachmentSizeMb: -1
+    precedenceBulk: false
+    throttlingEnabled: false
+    watchingEnabled: false
+  enrichedSummaryConfig:
+    enrichedSummaryEnabled: false
+    httpClientDelayBetweenRetriesInSeconds: 1
+    httpClientMaxRetries: 3
+    httpClientTimeoutInSeconds: 1
+  fingerprints:
+    fingerprintCleanupDisabled: false
+    storage: file
+  gerrit-trigger:
+    pluginConfig:
+      numberOfReceivingWorkerThreads: 30
+      numberOfSendingWorkerThreads: 15
+    servers:
+    - config:
+        buildCurrentPatchesOnly:
+          abortAbandonedPatchsets: false
+          abortManualPatchsets: true
+          abortNewPatchsets: true
+          abortSameTopic: false
+        categories:
+        - verdictDescription: Code Review
+          verdictValue: Code-Review
+        - verdictDescription: Verified
+          verdictValue: Verified
+        gerritAuthKeyFile: ${GERRIT_AUTH_KEY_FILE}
+        gerritBuildAbortedVerifiedValue: -1
+        gerritCmdBuildAborted: gerrit review <CHANGE>,<PATCHSET> --message 'Build Failed <BUILDS_STATS>' --verified <VERIFIED> --code-review <CODE_REVIEW>
+        gerritCmdBuildFailed: gerrit review <CHANGE>,<PATCHSET> --message 'Build Failed <BUILDS_STATS>' --verified <VERIFIED> --code-review <CODE_REVIEW>
+        gerritCmdBuildNotBuilt: gerrit review <CHANGE>,<PATCHSET> --message 'No Builds Executed <BUILDS_STATS>' --verified <VERIFIED> --code-review <CODE_REVIEW>
+        gerritCmdBuildStarted: gerrit review <CHANGE>,<PATCHSET> --message 'Build Started <BUILDURL> <STARTED_STATS>' --verified <VERIFIED> --code-review <CODE_REVIEW>
+        gerritCmdBuildSuccessful: gerrit review <CHANGE>,<PATCHSET> --message 'Build Successful <BUILDS_STATS>' --verified <VERIFIED> --code-review <CODE_REVIEW>
+        gerritCmdBuildUnstable: gerrit review <CHANGE>,<PATCHSET> --message 'Build Unstable <BUILDS_STATS>' --verified <VERIFIED> --code-review <CODE_REVIEW>
+        gerritEMail: onap-jobbuilder@jenkins.onap.org
+        gerritFrontEndUrl: https://gerrit.onap.org/
+        gerritHostName: gerrit.onap.org
+        gerritUserName: onap-jobbuilder
+      name: Primary
+      noConnectionOnStartup: false
+  globalNexusConfiguration:
+    instanceId: a2ceaf056d07477eb415b0d33f3fb3fb
+    iqConfigs:
+    - credentialsId: onap-nexus-clm
+      displayName: Nexus IQ Server
+      hideReports: false
+      id: NexusIQServer
+      internalId: 7e9659f16f694b4caf83d36a0f3bb589
+      serverUrl: https://nexus-iq.wl.linuxfoundation.org
+  globalSettings:
+    failOnCorrupt: false
+    noAuthors: false
+    quietMode: false
+  globalTimeOutConfiguration:
+    operations:
+    - abortOperation
+    overwriteable: false
+  injectionConfig:
+    allowUntrusted: false
+    checkForBuildAgentErrors: false
+    enabled: false
+    enforceUrl: false
+    gradleCaptureTaskInputFiles: true
+    injectCcudExtension: false
+    injectMavenExtension: false
+    mavenCaptureGoalInputFiles: true
+  jobConfigHistory:
+    excludePattern: queue\.xml|nodeMonitors\.xml|UpdateCenter\.xml|global-build-stats
+    maxDaysToKeepEntries: '30'
+    maxHistoryEntries: '1000'
+    saveModuleConfiguration: false
+    showBuildBadges: always
+    showChangeReasonCommentWindow: true
+    skipDuplicateHistory: true
+  junitTestResultStorage:
+    storage: file
+  location:
+    adminAddress: ${JENKINS_ADMIN_ADDRESS}
+    url: ${JENKINS_URL}
+  mailer:
+    charset: UTF-8
+    defaultSuffix: '@onap.org'
+    useSsl: false
+    useTls: false
+  mavenModuleSet:
+    localRepository: default
+  pollSCM:
+    pollingThreadCount: 10
+  prioritySorterConfiguration:
+    onlyAdminsMayEditPriorityConfiguration: false
+    strategy:
+      absoluteStrategy:
+        defaultPriority: 3
+        numberOfPriorities: 5
+  robotConfig:
+    buildsToShowInResultsColumn: 15
+    robotResultsColumnEnabled: true
+    xAxisLabelFormat: '#$build'
+  scmGit:
+    addGitTagAction: false
+    allowSecondFetch: false
+    createAccountBasedOnEmail: false
+    disableGitToolChooser: false
+    globalConfigEmail: onap-jobbuilder@jenkins.onap.org
+    globalConfigName: onap-jobbuilder
+    hideCredentials: false
+    showEntireCommitSummaryInChanges: false
+    useExistingAccountWithSameEmail: false
+  sonarGlobalConfiguration:
+    buildWrapperEnabled: false
+  timestamper:
+    allPipelines: false
+    elapsedTimeFormat: '''<b>''HH:mm:ss.S''</b> '''
+    systemTimeFormat: '''<b>''HH:mm:ss''</b> '''
+  warningsParsers:
+    consoleLogScanningPermitted: false
+  whiteSourcePipelineStep:
+    apiToken: ${whitesource-api-token}
+    checkPolicies: disable
+    connectionRetries: '1'
+    connectionRetriesInterval: '3'
+    connectionTimeout: '60'
+    failOnError: false
+    globalForceUpdate: false
+    overrideProxySettings: false
+    userKey: ${whitesource-user-key}
+  whiteSourcePublisher:
+    apiToken: ${whitesource-api-token}
+    checkPolicies: disable
+    connectionRetries: '1'
+    connectionRetriesInterval: '3'
+    connectionTimeout: '60'
+    failOnError: false
+    globalForceUpdate: false
+    overrideProxySettings: false
+    userKey: ${whitesource-user-key}

@@ -1,0 +1,2900 @@
+---
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-FileCopyrightText: 2026 ONAP Contributors
+#
+# Generated from the JCasC export of jenkins.onap.org (Jenkins 2.462.3).
+# Secret values are ${key} references resolved from the SECRETS directory.
+# Per-project Maven settings (config-file-provider).
+unclassified:
+  globalConfigFiles:
+    configs:
+    - mavenSettings:
+        comment: modeling-yang-kit-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: modeling-yang-kit-settings
+        isReplaceAll: true
+        name: modeling-yang-kit-settings
+        serverCredentialMappings:
+        - credentialsId: modeling-yang-kit
+          serverId: ecomp-snapshots
+        - credentialsId: modeling-yang-kit
+          serverId: ecomp-site
+        - credentialsId: modeling-yang-kit
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: modeling-yang-kit
+          serverId: nexus3.onap.org:10002
+        - credentialsId: modeling-yang-kit
+          serverId: nexus3.onap.org:10003
+        - credentialsId: modeling-yang-kit
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: msb-apigateway-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: msb-apigateway-settings
+        isReplaceAll: true
+        name: msb-apigateway-settings
+        serverCredentialMappings:
+        - credentialsId: msb-apigateway
+          serverId: ecomp-snapshots
+        - credentialsId: msb-apigateway
+          serverId: ecomp-site
+        - credentialsId: msb-apigateway
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: msb-apigateway
+          serverId: nexus3.onap.org:10002
+        - credentialsId: msb-apigateway
+          serverId: nexus3.onap.org:10003
+        - credentialsId: msb-apigateway
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: msb-discovery-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: msb-discovery-settings
+        isReplaceAll: true
+        name: msb-discovery-settings
+        serverCredentialMappings:
+        - credentialsId: msb-discovery
+          serverId: ecomp-snapshots
+        - credentialsId: msb-discovery
+          serverId: ecomp-site
+        - credentialsId: msb-discovery
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: msb-discovery
+          serverId: nexus3.onap.org:10002
+        - credentialsId: msb-discovery
+          serverId: nexus3.onap.org:10003
+        - credentialsId: msb-discovery
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: msb-java-sdk-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: msb-java-sdk-settings
+        isReplaceAll: true
+        name: msb-java-sdk-settings
+        serverCredentialMappings:
+        - credentialsId: msb-java-sdk
+          serverId: ecomp-snapshots
+        - credentialsId: msb-java-sdk
+          serverId: ecomp-site
+        - credentialsId: msb-java-sdk
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: msb-java-sdk
+          serverId: nexus3.onap.org:10002
+        - credentialsId: msb-java-sdk
+          serverId: nexus3.onap.org:10003
+        - credentialsId: msb-java-sdk
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: msb-service-mesh-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: msb-service-mesh-settings
+        isReplaceAll: true
+        name: msb-service-mesh-settings
+        serverCredentialMappings:
+        - credentialsId: msb-service-mesh
+          serverId: ecomp-snapshots
+        - credentialsId: msb-service-mesh
+          serverId: ecomp-site
+        - credentialsId: msb-service-mesh
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: msb-service-mesh
+          serverId: nexus3.onap.org:10002
+        - credentialsId: msb-service-mesh
+          serverId: nexus3.onap.org:10003
+        - credentialsId: msb-service-mesh
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: msb-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: msb-settings
+        isReplaceAll: true
+        name: msb-settings
+        serverCredentialMappings:
+        - credentialsId: msb
+          serverId: ecomp-snapshots
+        - credentialsId: msb
+          serverId: ecomp-site
+        - credentialsId: msb
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: msb
+          serverId: nexus3.onap.org:10002
+        - credentialsId: msb
+          serverId: nexus3.onap.org:10003
+        - credentialsId: msb
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: msb-swagger-sdk-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: msb-swagger-sdk-settings
+        isReplaceAll: true
+        name: msb-swagger-sdk-settings
+        serverCredentialMappings:
+        - credentialsId: msb-swagger-sdk
+          serverId: ecomp-snapshots
+        - credentialsId: msb-swagger-sdk
+          serverId: ecomp-site
+        - credentialsId: msb-swagger-sdk
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: msb-swagger-sdk
+          serverId: nexus3.onap.org:10002
+        - credentialsId: msb-swagger-sdk
+          serverId: nexus3.onap.org:10003
+        - credentialsId: msb-swagger-sdk
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: mso-chef-repo-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: mso-chef-repo-settings
+        isReplaceAll: true
+        name: mso-chef-repo-settings
+        serverCredentialMappings:
+        - credentialsId: mso-chef-repo
+          serverId: ecomp-snapshots
+        - credentialsId: mso-chef-repo
+          serverId: ecomp-site
+        - credentialsId: mso-chef-repo
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: mso-chef-repo
+          serverId: nexus3.onap.org:10002
+        - credentialsId: mso-chef-repo
+          serverId: nexus3.onap.org:10003
+        - credentialsId: mso-chef-repo
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: mso-docker-config-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: mso-docker-config-settings
+        isReplaceAll: true
+        name: mso-docker-config-settings
+        serverCredentialMappings:
+        - credentialsId: mso-docker-config
+          serverId: ecomp-snapshots
+        - credentialsId: mso-docker-config
+          serverId: ecomp-site
+        - credentialsId: mso-docker-config
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: mso-docker-config
+          serverId: nexus3.onap.org:10002
+        - credentialsId: mso-docker-config
+          serverId: nexus3.onap.org:10003
+        - credentialsId: mso-docker-config
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: mso-libs-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: mso-libs-settings
+        isReplaceAll: true
+        name: mso-libs-settings
+        serverCredentialMappings:
+        - credentialsId: mso-libs
+          serverId: ecomp-snapshots
+        - credentialsId: mso-libs
+          serverId: ecomp-site
+        - credentialsId: mso-libs
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: mso-libs
+          serverId: nexus3.onap.org:10002
+        - credentialsId: mso-libs
+          serverId: nexus3.onap.org:10003
+        - credentialsId: mso-libs
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: mso-mso-config-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: mso-mso-config-settings
+        isReplaceAll: true
+        name: mso-mso-config-settings
+        serverCredentialMappings:
+        - credentialsId: mso-mso-config
+          serverId: ecomp-snapshots
+        - credentialsId: mso-mso-config
+          serverId: ecomp-site
+        - credentialsId: mso-mso-config
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: mso-mso-config
+          serverId: nexus3.onap.org:10002
+        - credentialsId: mso-mso-config
+          serverId: nexus3.onap.org:10003
+        - credentialsId: mso-mso-config
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: mso-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: mso-settings
+        isReplaceAll: true
+        name: mso-settings
+        serverCredentialMappings:
+        - credentialsId: mso
+          serverId: ecomp-snapshots
+        - credentialsId: mso
+          serverId: ecomp-site
+        - credentialsId: mso
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: mso
+          serverId: nexus3.onap.org:10002
+        - credentialsId: mso
+          serverId: nexus3.onap.org:10003
+        - credentialsId: mso
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: multicloud-azure-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: multicloud-azure-settings
+        isReplaceAll: true
+        name: multicloud-azure-settings
+        serverCredentialMappings:
+        - credentialsId: multicloud-azure
+          serverId: ecomp-snapshots
+        - credentialsId: multicloud-azure
+          serverId: ecomp-site
+        - credentialsId: multicloud-azure
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: multicloud-azure
+          serverId: nexus3.onap.org:10002
+        - credentialsId: multicloud-azure
+          serverId: nexus3.onap.org:10003
+        - credentialsId: multicloud-azure
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: multicloud-framework-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: multicloud-framework-settings
+        isReplaceAll: true
+        name: multicloud-framework-settings
+        serverCredentialMappings:
+        - credentialsId: multicloud-framework
+          serverId: ecomp-snapshots
+        - credentialsId: multicloud-framework
+          serverId: ecomp-site
+        - credentialsId: multicloud-framework
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: multicloud-framework
+          serverId: nexus3.onap.org:10002
+        - credentialsId: multicloud-framework
+          serverId: nexus3.onap.org:10003
+        - credentialsId: multicloud-framework
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: multicloud-k8s-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: multicloud-k8s-settings
+        isReplaceAll: true
+        name: multicloud-k8s-settings
+        serverCredentialMappings:
+        - credentialsId: multicloud-k8s
+          serverId: ecomp-snapshots
+        - credentialsId: multicloud-k8s
+          serverId: ecomp-site
+        - credentialsId: multicloud-k8s
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: multicloud-k8s
+          serverId: nexus3.onap.org:10002
+        - credentialsId: multicloud-k8s
+          serverId: nexus3.onap.org:10003
+        - credentialsId: multicloud-k8s
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: multicloud-openstack-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: multicloud-openstack-settings
+        isReplaceAll: true
+        name: multicloud-openstack-settings
+        serverCredentialMappings:
+        - credentialsId: multicloud-openstack
+          serverId: ecomp-snapshots
+        - credentialsId: multicloud-openstack
+          serverId: ecomp-site
+        - credentialsId: multicloud-openstack
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: multicloud-openstack
+          serverId: nexus3.onap.org:10002
+        - credentialsId: multicloud-openstack
+          serverId: nexus3.onap.org:10003
+        - credentialsId: multicloud-openstack
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: multicloud-openstack-vmware-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: multicloud-openstack-vmware-settings
+        isReplaceAll: true
+        name: multicloud-openstack-vmware-settings
+        serverCredentialMappings:
+        - credentialsId: multicloud-openstack-vmware
+          serverId: ecomp-snapshots
+        - credentialsId: multicloud-openstack-vmware
+          serverId: ecomp-site
+        - credentialsId: multicloud-openstack-vmware
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: multicloud-openstack-vmware
+          serverId: nexus3.onap.org:10002
+        - credentialsId: multicloud-openstack-vmware
+          serverId: nexus3.onap.org:10003
+        - credentialsId: multicloud-openstack-vmware
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: multicloud-openstack-windriver-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: multicloud-openstack-windriver-settings
+        isReplaceAll: true
+        name: multicloud-openstack-windriver-settings
+        serverCredentialMappings:
+        - credentialsId: multicloud-openstack-windriver
+          serverId: ecomp-snapshots
+        - credentialsId: multicloud-openstack-windriver
+          serverId: ecomp-site
+        - credentialsId: multicloud-openstack-windriver
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: multicloud-openstack-windriver
+          serverId: nexus3.onap.org:10002
+        - credentialsId: multicloud-openstack-windriver
+          serverId: nexus3.onap.org:10003
+        - credentialsId: multicloud-openstack-windriver
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: multicloud-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: multicloud-settings
+        isReplaceAll: true
+        name: multicloud-settings
+        serverCredentialMappings:
+        - credentialsId: multicloud
+          serverId: ecomp-snapshots
+        - credentialsId: multicloud
+          serverId: ecomp-site
+        - credentialsId: multicloud
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: multicloud
+          serverId: nexus3.onap.org:10002
+        - credentialsId: multicloud
+          serverId: nexus3.onap.org:10003
+        - credentialsId: multicloud
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: music-distributed-kv-store-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: music-distributed-kv-store-settings
+        isReplaceAll: true
+        name: music-distributed-kv-store-settings
+        serverCredentialMappings:
+        - credentialsId: music-distributed-kv-store
+          serverId: ecomp-snapshots
+        - credentialsId: music-distributed-kv-store
+          serverId: ecomp-site
+        - credentialsId: music-distributed-kv-store
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: music-distributed-kv-store
+          serverId: nexus3.onap.org:10002
+        - credentialsId: music-distributed-kv-store
+          serverId: nexus3.onap.org:10003
+        - credentialsId: music-distributed-kv-store
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: music-mdbc-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: music-mdbc-settings
+        isReplaceAll: true
+        name: music-mdbc-settings
+        serverCredentialMappings:
+        - credentialsId: music-mdbc
+          serverId: ecomp-snapshots
+        - credentialsId: music-mdbc
+          serverId: ecomp-site
+        - credentialsId: music-mdbc
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: music-mdbc
+          serverId: nexus3.onap.org:10002
+        - credentialsId: music-mdbc
+          serverId: nexus3.onap.org:10003
+        - credentialsId: music-mdbc
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: music-prom-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: music-prom-settings
+        isReplaceAll: true
+        name: music-prom-settings
+        serverCredentialMappings:
+        - credentialsId: music-prom
+          serverId: ecomp-snapshots
+        - credentialsId: music-prom
+          serverId: ecomp-site
+        - credentialsId: music-prom
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: music-prom
+          serverId: nexus3.onap.org:10002
+        - credentialsId: music-prom
+          serverId: nexus3.onap.org:10003
+        - credentialsId: music-prom
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: music-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: music-settings
+        isReplaceAll: true
+        name: music-settings
+        serverCredentialMappings:
+        - credentialsId: music
+          serverId: ecomp-snapshots
+        - credentialsId: music
+          serverId: ecomp-site
+        - credentialsId: music
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: music
+          serverId: nexus3.onap.org:10002
+        - credentialsId: music
+          serverId: nexus3.onap.org:10003
+        - credentialsId: music
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: ncomp-cdap-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: ncomp-cdap-settings
+        isReplaceAll: true
+        name: ncomp-cdap-settings
+        serverCredentialMappings:
+        - credentialsId: ncomp-cdap
+          serverId: ecomp-snapshots
+        - credentialsId: ncomp-cdap
+          serverId: ecomp-site
+        - credentialsId: ncomp-cdap
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: ncomp-cdap
+          serverId: nexus3.onap.org:10002
+        - credentialsId: ncomp-cdap
+          serverId: nexus3.onap.org:10003
+        - credentialsId: ncomp-cdap
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: ncomp-core-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: ncomp-core-settings
+        isReplaceAll: true
+        name: ncomp-core-settings
+        serverCredentialMappings:
+        - credentialsId: ncomp-core
+          serverId: ecomp-snapshots
+        - credentialsId: ncomp-core
+          serverId: ecomp-site
+        - credentialsId: ncomp-core
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: ncomp-core
+          serverId: nexus3.onap.org:10002
+        - credentialsId: ncomp-core
+          serverId: nexus3.onap.org:10003
+        - credentialsId: ncomp-core
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: ncomp-docker-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: ncomp-docker-settings
+        isReplaceAll: true
+        name: ncomp-docker-settings
+        serverCredentialMappings:
+        - credentialsId: ncomp-docker
+          serverId: ecomp-snapshots
+        - credentialsId: ncomp-docker
+          serverId: ecomp-site
+        - credentialsId: ncomp-docker
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: ncomp-docker
+          serverId: nexus3.onap.org:10002
+        - credentialsId: ncomp-docker
+          serverId: nexus3.onap.org:10003
+        - credentialsId: ncomp-docker
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: ncomp-maven-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: ncomp-maven-settings
+        isReplaceAll: true
+        name: ncomp-maven-settings
+        serverCredentialMappings:
+        - credentialsId: ncomp-maven
+          serverId: ecomp-snapshots
+        - credentialsId: ncomp-maven
+          serverId: ecomp-site
+        - credentialsId: ncomp-maven
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: ncomp-maven
+          serverId: nexus3.onap.org:10002
+        - credentialsId: ncomp-maven
+          serverId: nexus3.onap.org:10003
+        - credentialsId: ncomp-maven
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: ncomp-openstack-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: ncomp-openstack-settings
+        isReplaceAll: true
+        name: ncomp-openstack-settings
+        serverCredentialMappings:
+        - credentialsId: ncomp-openstack
+          serverId: ecomp-snapshots
+        - credentialsId: ncomp-openstack
+          serverId: ecomp-site
+        - credentialsId: ncomp-openstack
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: ncomp-openstack
+          serverId: nexus3.onap.org:10002
+        - credentialsId: ncomp-openstack
+          serverId: nexus3.onap.org:10003
+        - credentialsId: ncomp-openstack
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: ncomp-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: ncomp-settings
+        isReplaceAll: true
+        name: ncomp-settings
+        serverCredentialMappings:
+        - credentialsId: ncomp
+          serverId: ecomp-snapshots
+        - credentialsId: ncomp
+          serverId: ecomp-site
+        - credentialsId: ncomp
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: ncomp
+          serverId: nexus3.onap.org:10002
+        - credentialsId: ncomp
+          serverId: nexus3.onap.org:10003
+        - credentialsId: ncomp
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: ncomp-sirius-manager-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: ncomp-sirius-manager-settings
+        isReplaceAll: true
+        name: ncomp-sirius-manager-settings
+        serverCredentialMappings:
+        - credentialsId: ncomp-sirius-manager
+          serverId: ecomp-snapshots
+        - credentialsId: ncomp-sirius-manager
+          serverId: ecomp-site
+        - credentialsId: ncomp-sirius-manager
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: ncomp-sirius-manager
+          serverId: nexus3.onap.org:10002
+        - credentialsId: ncomp-sirius-manager
+          serverId: nexus3.onap.org:10003
+        - credentialsId: ncomp-sirius-manager
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: ncomp-sirius-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: ncomp-sirius-settings
+        isReplaceAll: true
+        name: ncomp-sirius-settings
+        serverCredentialMappings:
+        - credentialsId: ncomp-sirius
+          serverId: ecomp-snapshots
+        - credentialsId: ncomp-sirius
+          serverId: ecomp-site
+        - credentialsId: ncomp-sirius
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: ncomp-sirius
+          serverId: nexus3.onap.org:10002
+        - credentialsId: ncomp-sirius
+          serverId: nexus3.onap.org:10003
+        - credentialsId: ncomp-sirius
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: ncomp-utils-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: ncomp-utils-settings
+        isReplaceAll: true
+        name: ncomp-utils-settings
+        serverCredentialMappings:
+        - credentialsId: ncomp-utils
+          serverId: ecomp-snapshots
+        - credentialsId: ncomp-utils
+          serverId: ecomp-site
+        - credentialsId: ncomp-utils
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: ncomp-utils
+          serverId: nexus3.onap.org:10002
+        - credentialsId: ncomp-utils
+          serverId: nexus3.onap.org:10003
+        - credentialsId: ncomp-utils
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: onap-releasedockerhub-authz-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: onap-releasedockerhub-authz-settings
+        isReplaceAll: true
+        name: onap-releasedockerhub-authz-settings
+        serverCredentialMappings:
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10002
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: oom-platform-cert-manager-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: oom-platform-cert-manager-settings
+        isReplaceAll: true
+        name: oom-platform-cert-manager-settings
+        serverCredentialMappings:
+        - credentialsId: oom-platform-cert-manager
+          serverId: ecomp-snapshots
+        - credentialsId: oom-platform-cert-manager
+          serverId: ecomp-site
+        - credentialsId: oom-platform-cert-manager
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: oom-platform-cert-manager
+          serverId: nexus3.onap.org:10002
+        - credentialsId: oom-platform-cert-manager
+          serverId: nexus3.onap.org:10003
+        - credentialsId: oom-platform-cert-manager
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: oom-platform-cert-service-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: oom-platform-cert-service-settings
+        isReplaceAll: true
+        name: oom-platform-cert-service-settings
+        serverCredentialMappings:
+        - credentialsId: oom-platform-cert-service
+          serverId: ecomp-snapshots
+        - credentialsId: oom-platform-cert-service
+          serverId: ecomp-site
+        - credentialsId: oom-platform-cert-service
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: oom-platform-cert-service
+          serverId: nexus3.onap.org:10002
+        - credentialsId: oom-platform-cert-service
+          serverId: nexus3.onap.org:10003
+        - credentialsId: oom-platform-cert-service
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: oom-platform-keycloak-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: oom-platform-keycloak-settings
+        isReplaceAll: true
+        name: oom-platform-keycloak-settings
+        serverCredentialMappings:
+        - credentialsId: oom-platform-keycloak
+          serverId: ecomp-snapshots
+        - credentialsId: oom-platform-keycloak
+          serverId: ecomp-site
+        - credentialsId: oom-platform-keycloak
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: oom-platform-keycloak
+          serverId: nexus3.onap.org:10002
+        - credentialsId: oom-platform-keycloak
+          serverId: nexus3.onap.org:10003
+        - credentialsId: oom-platform-keycloak
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: oom-readiness-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: oom-readiness-settings
+        isReplaceAll: true
+        name: oom-readiness-settings
+        serverCredentialMappings:
+        - credentialsId: oom-readiness
+          serverId: ecomp-snapshots
+        - credentialsId: oom-readiness
+          serverId: ecomp-site
+        - credentialsId: oom-readiness
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: oom-readiness
+          serverId: nexus3.onap.org:10002
+        - credentialsId: oom-readiness
+          serverId: nexus3.onap.org:10003
+        - credentialsId: oom-readiness
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: oom-registrator-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: oom-registrator-settings
+        isReplaceAll: true
+        name: oom-registrator-settings
+        serverCredentialMappings:
+        - credentialsId: oom-registrator
+          serverId: ecomp-snapshots
+        - credentialsId: oom-registrator
+          serverId: ecomp-site
+        - credentialsId: oom-registrator
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: oom-registrator
+          serverId: nexus3.onap.org:10002
+        - credentialsId: oom-registrator
+          serverId: nexus3.onap.org:10003
+        - credentialsId: oom-registrator
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: oom-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: oom-settings
+        isReplaceAll: true
+        name: oom-settings
+        serverCredentialMappings:
+        - credentialsId: oom
+          serverId: ecomp-snapshots
+        - credentialsId: oom
+          serverId: ecomp-site
+        - credentialsId: oom
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: oom
+          serverId: nexus3.onap.org:10002
+        - credentialsId: oom
+          serverId: nexus3.onap.org:10003
+        - credentialsId: oom
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+        - credentialsId: oom
+          serverId: oom-helm
+    - mavenSettings:
+        comment: oparent-cia-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: oparent-cia-settings
+        isReplaceAll: true
+        name: oparent-cia-settings
+        serverCredentialMappings:
+        - credentialsId: oparent-cia
+          serverId: ecomp-snapshots
+        - credentialsId: oparent-cia
+          serverId: ecomp-site
+        - credentialsId: oparent-cia
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: oparent-cia
+          serverId: nexus3.onap.org:10002
+        - credentialsId: oparent-cia
+          serverId: nexus3.onap.org:10003
+        - credentialsId: oparent-cia
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: oparent-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: oparent-settings
+        isReplaceAll: true
+        name: oparent-settings
+        serverCredentialMappings:
+        - credentialsId: oparent
+          serverId: ecomp-snapshots
+        - credentialsId: oparent
+          serverId: ecomp-site
+        - credentialsId: oparent
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: oparent
+          serverId: nexus3.onap.org:10002
+        - credentialsId: oparent
+          serverId: nexus3.onap.org:10003
+        - credentialsId: oparent
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: optf-cmso-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: optf-cmso-settings
+        isReplaceAll: true
+        name: optf-cmso-settings
+        serverCredentialMappings:
+        - credentialsId: optf-cmso
+          serverId: ecomp-snapshots
+        - credentialsId: optf-cmso
+          serverId: ecomp-site
+        - credentialsId: optf-cmso
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: optf-cmso
+          serverId: nexus3.onap.org:10002
+        - credentialsId: optf-cmso
+          serverId: nexus3.onap.org:10003
+        - credentialsId: optf-cmso
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: optf-fgps-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: optf-fgps-settings
+        isReplaceAll: true
+        name: optf-fgps-settings
+        serverCredentialMappings:
+        - credentialsId: optf-fgps
+          serverId: ecomp-snapshots
+        - credentialsId: optf-fgps
+          serverId: ecomp-site
+        - credentialsId: optf-fgps
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: optf-fgps
+          serverId: nexus3.onap.org:10002
+        - credentialsId: optf-fgps
+          serverId: nexus3.onap.org:10003
+        - credentialsId: optf-fgps
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: optf-has-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: optf-has-settings
+        isReplaceAll: true
+        name: optf-has-settings
+        serverCredentialMappings:
+        - credentialsId: optf-has
+          serverId: ecomp-snapshots
+        - credentialsId: optf-has
+          serverId: ecomp-site
+        - credentialsId: optf-has
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: optf-has
+          serverId: nexus3.onap.org:10002
+        - credentialsId: optf-has
+          serverId: nexus3.onap.org:10003
+        - credentialsId: optf-has
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: optf-osdf-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: optf-osdf-settings
+        isReplaceAll: true
+        name: optf-osdf-settings
+        serverCredentialMappings:
+        - credentialsId: optf-osdf
+          serverId: ecomp-snapshots
+        - credentialsId: optf-osdf
+          serverId: ecomp-site
+        - credentialsId: optf-osdf
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: optf-osdf
+          serverId: nexus3.onap.org:10002
+        - credentialsId: optf-osdf
+          serverId: nexus3.onap.org:10003
+        - credentialsId: optf-osdf
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: optf-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: optf-settings
+        isReplaceAll: true
+        name: optf-settings
+        serverCredentialMappings:
+        - credentialsId: optf
+          serverId: ecomp-snapshots
+        - credentialsId: optf
+          serverId: ecomp-site
+        - credentialsId: optf
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: optf
+          serverId: nexus3.onap.org:10002
+        - credentialsId: optf
+          serverId: nexus3.onap.org:10003
+        - credentialsId: optf
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: policy-apex-pdp-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: policy-apex-pdp-settings
+        isReplaceAll: true
+        name: policy-apex-pdp-settings
+        serverCredentialMappings:
+        - credentialsId: policy-apex-pdp
+          serverId: ecomp-snapshots
+        - credentialsId: policy-apex-pdp
+          serverId: ecomp-site
+        - credentialsId: policy-apex-pdp
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: policy-apex-pdp
+          serverId: nexus3.onap.org:10002
+        - credentialsId: policy-apex-pdp
+          serverId: nexus3.onap.org:10003
+        - credentialsId: policy-apex-pdp
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: policy-api-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: policy-api-settings
+        isReplaceAll: true
+        name: policy-api-settings
+        serverCredentialMappings:
+        - credentialsId: policy-api
+          serverId: ecomp-snapshots
+        - credentialsId: policy-api
+          serverId: ecomp-site
+        - credentialsId: policy-api
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: policy-api
+          serverId: nexus3.onap.org:10002
+        - credentialsId: policy-api
+          serverId: nexus3.onap.org:10003
+        - credentialsId: policy-api
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: policy-clamp-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: policy-clamp-settings
+        isReplaceAll: true
+        name: policy-clamp-settings
+        serverCredentialMappings:
+        - credentialsId: policy-clamp
+          serverId: ecomp-snapshots
+        - credentialsId: policy-clamp
+          serverId: ecomp-site
+        - credentialsId: policy-clamp
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: policy-clamp
+          serverId: nexus3.onap.org:10002
+        - credentialsId: policy-clamp
+          serverId: nexus3.onap.org:10003
+        - credentialsId: policy-clamp
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: policy-common-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: policy-common-settings
+        isReplaceAll: true
+        name: policy-common-settings
+        serverCredentialMappings:
+        - credentialsId: policy-common
+          serverId: ecomp-snapshots
+        - credentialsId: policy-common
+          serverId: ecomp-site
+        - credentialsId: policy-common
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: policy-common
+          serverId: nexus3.onap.org:10002
+        - credentialsId: policy-common
+          serverId: nexus3.onap.org:10003
+        - credentialsId: policy-common
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: policy-core-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: policy-core-settings
+        isReplaceAll: true
+        name: policy-core-settings
+        serverCredentialMappings:
+        - credentialsId: policy-core
+          serverId: ecomp-snapshots
+        - credentialsId: policy-core
+          serverId: ecomp-site
+        - credentialsId: policy-core
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: policy-core
+          serverId: nexus3.onap.org:10002
+        - credentialsId: policy-core
+          serverId: nexus3.onap.org:10003
+        - credentialsId: policy-core
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: policy-distribution-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: policy-distribution-settings
+        isReplaceAll: true
+        name: policy-distribution-settings
+        serverCredentialMappings:
+        - credentialsId: policy-distribution
+          serverId: ecomp-snapshots
+        - credentialsId: policy-distribution
+          serverId: ecomp-site
+        - credentialsId: policy-distribution
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: policy-distribution
+          serverId: nexus3.onap.org:10002
+        - credentialsId: policy-distribution
+          serverId: nexus3.onap.org:10003
+        - credentialsId: policy-distribution
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: policy-docker-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: policy-docker-settings
+        isReplaceAll: true
+        name: policy-docker-settings
+        serverCredentialMappings:
+        - credentialsId: policy-docker
+          serverId: ecomp-snapshots
+        - credentialsId: policy-docker
+          serverId: ecomp-site
+        - credentialsId: policy-docker
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: policy-docker
+          serverId: nexus3.onap.org:10002
+        - credentialsId: policy-docker
+          serverId: nexus3.onap.org:10003
+        - credentialsId: policy-docker
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: policy-drools-applications-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: policy-drools-applications-settings
+        isReplaceAll: true
+        name: policy-drools-applications-settings
+        serverCredentialMappings:
+        - credentialsId: policy-drools-applications
+          serverId: ecomp-snapshots
+        - credentialsId: policy-drools-applications
+          serverId: ecomp-site
+        - credentialsId: policy-drools-applications
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: policy-drools-applications
+          serverId: nexus3.onap.org:10002
+        - credentialsId: policy-drools-applications
+          serverId: nexus3.onap.org:10003
+        - credentialsId: policy-drools-applications
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: policy-drools-pdp-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: policy-drools-pdp-settings
+        isReplaceAll: true
+        name: policy-drools-pdp-settings
+        serverCredentialMappings:
+        - credentialsId: policy-drools-pdp
+          serverId: ecomp-snapshots
+        - credentialsId: policy-drools-pdp
+          serverId: ecomp-site
+        - credentialsId: policy-drools-pdp
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: policy-drools-pdp
+          serverId: nexus3.onap.org:10002
+        - credentialsId: policy-drools-pdp
+          serverId: nexus3.onap.org:10003
+        - credentialsId: policy-drools-pdp
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: policy-engine-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: policy-engine-settings
+        isReplaceAll: true
+        name: policy-engine-settings
+        serverCredentialMappings:
+        - credentialsId: policy-engine
+          serverId: ecomp-snapshots
+        - credentialsId: policy-engine
+          serverId: ecomp-site
+        - credentialsId: policy-engine
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: policy-engine
+          serverId: nexus3.onap.org:10002
+        - credentialsId: policy-engine
+          serverId: nexus3.onap.org:10003
+        - credentialsId: policy-engine
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: policy-gui-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: policy-gui-settings
+        isReplaceAll: true
+        name: policy-gui-settings
+        serverCredentialMappings:
+        - credentialsId: policy-gui
+          serverId: ecomp-snapshots
+        - credentialsId: policy-gui
+          serverId: ecomp-site
+        - credentialsId: policy-gui
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: policy-gui
+          serverId: nexus3.onap.org:10002
+        - credentialsId: policy-gui
+          serverId: nexus3.onap.org:10003
+        - credentialsId: policy-gui
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: policy-models-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: policy-models-settings
+        isReplaceAll: true
+        name: policy-models-settings
+        serverCredentialMappings:
+        - credentialsId: policy-models
+          serverId: ecomp-snapshots
+        - credentialsId: policy-models
+          serverId: ecomp-site
+        - credentialsId: policy-models
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: policy-models
+          serverId: nexus3.onap.org:10002
+        - credentialsId: policy-models
+          serverId: nexus3.onap.org:10003
+        - credentialsId: policy-models
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: policy-opa-pdp-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: policy-opa-pdp-settings
+        isReplaceAll: true
+        name: policy-opa-pdp-settings
+        serverCredentialMappings:
+        - credentialsId: policy-opa-pdp
+          serverId: ecomp-snapshots
+        - credentialsId: policy-opa-pdp
+          serverId: ecomp-site
+        - credentialsId: policy-opa-pdp
+          serverId: ecomp-staging
+        - credentialsId: policy-opa-pdp
+          serverId: nexus3.onap.org:10001
+        - credentialsId: policy-opa-pdp
+          serverId: nexus3.onap.org:10002
+        - credentialsId: policy-opa-pdp
+          serverId: nexus3.onap.org:10003
+        - credentialsId: policy-opa-pdp
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: policy-pap-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: policy-pap-settings
+        isReplaceAll: true
+        name: policy-pap-settings
+        serverCredentialMappings:
+        - credentialsId: policy-pap
+          serverId: ecomp-snapshots
+        - credentialsId: policy-pap
+          serverId: ecomp-site
+        - credentialsId: policy-pap
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: policy-pap
+          serverId: nexus3.onap.org:10002
+        - credentialsId: policy-pap
+          serverId: nexus3.onap.org:10003
+        - credentialsId: policy-pap
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: policy-parent-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: policy-parent-settings
+        isReplaceAll: true
+        name: policy-parent-settings
+        serverCredentialMappings:
+        - credentialsId: policy-parent
+          serverId: ecomp-snapshots
+        - credentialsId: policy-parent
+          serverId: ecomp-site
+        - credentialsId: policy-parent
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: policy-parent
+          serverId: nexus3.onap.org:10002
+        - credentialsId: policy-parent
+          serverId: nexus3.onap.org:10003
+        - credentialsId: policy-parent
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: policy-pdp-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: policy-pdp-settings
+        isReplaceAll: true
+        name: policy-pdp-settings
+        serverCredentialMappings:
+        - credentialsId: policy-pdp
+          serverId: ecomp-snapshots
+        - credentialsId: policy-pdp
+          serverId: ecomp-site
+        - credentialsId: policy-pdp
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: policy-pdp
+          serverId: nexus3.onap.org:10002
+        - credentialsId: policy-pdp
+          serverId: nexus3.onap.org:10003
+        - credentialsId: policy-pdp
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: policy-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: policy-settings
+        isReplaceAll: true
+        name: policy-settings
+        serverCredentialMappings:
+        - credentialsId: policy
+          serverId: ecomp-snapshots
+        - credentialsId: policy
+          serverId: ecomp-site
+        - credentialsId: policy
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: policy
+          serverId: nexus3.onap.org:10002
+        - credentialsId: policy
+          serverId: nexus3.onap.org:10003
+        - credentialsId: policy
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: policy-xacml-pdp-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: policy-xacml-pdp-settings
+        isReplaceAll: true
+        name: policy-xacml-pdp-settings
+        serverCredentialMappings:
+        - credentialsId: policy-xacml-pdp
+          serverId: ecomp-snapshots
+        - credentialsId: policy-xacml-pdp
+          serverId: ecomp-site
+        - credentialsId: policy-xacml-pdp
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: policy-xacml-pdp
+          serverId: nexus3.onap.org:10002
+        - credentialsId: policy-xacml-pdp
+          serverId: nexus3.onap.org:10003
+        - credentialsId: policy-xacml-pdp
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: portal-ng-bff
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: portal-ng-bff-settings
+        isReplaceAll: true
+        name: portal-ng-bff
+        serverCredentialMappings:
+        - credentialsId: portal-ng-bff
+          serverId: ecomp-snapshots
+        - credentialsId: portal-ng-bff
+          serverId: ecomp-site
+        - credentialsId: portal-ng-bff
+          serverId: ecomp-staging
+        - credentialsId: portal-ng-bff
+          serverId: nexus3.onap.org:10001
+        - credentialsId: portal-ng-bff
+          serverId: nexus3.onap.org:10002
+        - credentialsId: portal-ng-bff
+          serverId: nexus3.onap.org:10003
+        - credentialsId: portal-ng-bff
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: portal-ng-e2e
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: portal-ng-e2e
+        isReplaceAll: true
+        name: portal-ng-e2e
+        serverCredentialMappings:
+        - credentialsId: portal-ng-e2e
+          serverId: ecomp-snapshots
+        - credentialsId: portal-ng-e2e
+          serverId: ecomp-site
+        - credentialsId: portal-ng-e2e
+          serverId: ecomp-staging
+        - credentialsId: portal-ng-e2e
+          serverId: nexus3.onap.org:10001
+        - credentialsId: portal-ng-e2e
+          serverId: nexus3.onap.org:10002
+        - credentialsId: portal-ng-e2e
+          serverId: nexus3.onap.org:10003
+        - credentialsId: portal-ng-e2e
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: portal-ng-history
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: portal-ng-history-settings
+        isReplaceAll: true
+        name: portal-ng-history
+        serverCredentialMappings:
+        - credentialsId: portal-ng-history
+          serverId: ecomp-snapshots
+        - credentialsId: portal-ng-history
+          serverId: ecomp-site
+        - credentialsId: portal-ng-history
+          serverId: ecomp-staging
+        - credentialsId: portal-ng-history
+          serverId: nexus3.onap.org:10001
+        - credentialsId: portal-ng-history
+          serverId: nexus3.onap.org:10002
+        - credentialsId: portal-ng-history
+          serverId: nexus3.onap.org:10003
+        - credentialsId: portal-ng-history
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: portal-ng-preferences
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: portal-ng-preferences-settings
+        isReplaceAll: true
+        name: portal-ng-preferences
+        serverCredentialMappings:
+        - credentialsId: portal-ng-preferences
+          serverId: ecomp-snapshots
+        - credentialsId: portal-ng-preferences
+          serverId: ecomp-site
+        - credentialsId: portal-ng-preferences
+          serverId: ecomp-staging
+        - credentialsId: portal-ng-preferences
+          serverId: nexus3.onap.org:10001
+        - credentialsId: portal-ng-preferences
+          serverId: nexus3.onap.org:10002
+        - credentialsId: portal-ng-preferences
+          serverId: nexus3.onap.org:10003
+        - credentialsId: portal-ng-preferences
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: portal-ng-ui-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: portal-ng-ui-settings
+        isReplaceAll: true
+        name: portal-ng-ui-settings
+        serverCredentialMappings:
+        - credentialsId: portal-ng-ui
+          serverId: ecomp-snapshots
+        - credentialsId: portal-ng-ui
+          serverId: ecomp-site
+        - credentialsId: portal-ng-ui
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: portal-ng-ui
+          serverId: nexus3.onap.org:10002
+        - credentialsId: portal-ng-ui
+          serverId: nexus3.onap.org:10003
+        - credentialsId: portal-ng-ui
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: portal-sdk-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: portal-sdk-settings
+        isReplaceAll: true
+        name: portal-sdk-settings
+        serverCredentialMappings:
+        - credentialsId: portal-sdk
+          serverId: ecomp-snapshots
+        - credentialsId: portal-sdk
+          serverId: ecomp-site
+        - credentialsId: portal-sdk
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: portal-sdk
+          serverId: nexus3.onap.org:10002
+        - credentialsId: portal-sdk
+          serverId: nexus3.onap.org:10003
+        - credentialsId: portal-sdk
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: portal-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: portal-settings
+        isReplaceAll: true
+        name: portal-settings
+        serverCredentialMappings:
+        - credentialsId: portal
+          serverId: ecomp-snapshots
+        - credentialsId: portal
+          serverId: ecomp-site
+        - credentialsId: portal
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: portal
+          serverId: nexus3.onap.org:10002
+        - credentialsId: portal
+          serverId: nexus3.onap.org:10003
+        - credentialsId: portal
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: sdc-dcae-d-ci-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: sdc-dcae-d-ci-settings
+        isReplaceAll: true
+        name: sdc-dcae-d-ci-settings
+        serverCredentialMappings:
+        - credentialsId: sdc-dcae-d-ci
+          serverId: ecomp-snapshots
+        - credentialsId: sdc-dcae-d-ci
+          serverId: ecomp-site
+        - credentialsId: sdc-dcae-d-ci
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: sdc-dcae-d-ci
+          serverId: nexus3.onap.org:10002
+        - credentialsId: sdc-dcae-d-ci
+          serverId: nexus3.onap.org:10003
+        - credentialsId: sdc-dcae-d-ci
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: sdc-dcae-d-dt-be-main-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: sdc-dcae-d-dt-be-main-settings
+        isReplaceAll: true
+        name: sdc-dcae-d-dt-be-main-settings
+        serverCredentialMappings:
+        - credentialsId: sdc-dcae-d-dt-be-main
+          serverId: ecomp-snapshots
+        - credentialsId: sdc-dcae-d-dt-be-main
+          serverId: ecomp-site
+        - credentialsId: sdc-dcae-d-dt-be-main
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: sdc-dcae-d-dt-be-main
+          serverId: nexus3.onap.org:10002
+        - credentialsId: sdc-dcae-d-dt-be-main
+          serverId: nexus3.onap.org:10003
+        - credentialsId: sdc-dcae-d-dt-be-main
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: sdc-dcae-d-dt-be-property-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: sdc-dcae-d-dt-be-property-settings
+        isReplaceAll: true
+        name: sdc-dcae-d-dt-be-property-settings
+        serverCredentialMappings:
+        - credentialsId: sdc-dcae-d-dt-be-property
+          serverId: ecomp-snapshots
+        - credentialsId: sdc-dcae-d-dt-be-property
+          serverId: ecomp-site
+        - credentialsId: sdc-dcae-d-dt-be-property
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: sdc-dcae-d-dt-be-property
+          serverId: nexus3.onap.org:10002
+        - credentialsId: sdc-dcae-d-dt-be-property
+          serverId: nexus3.onap.org:10003
+        - credentialsId: sdc-dcae-d-dt-be-property
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: sdc-dcae-d-dt-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: sdc-dcae-d-dt-settings
+        isReplaceAll: true
+        name: sdc-dcae-d-dt-settings
+        serverCredentialMappings:
+        - credentialsId: sdc-dcae-d-dt
+          serverId: ecomp-snapshots
+        - credentialsId: sdc-dcae-d-dt
+          serverId: ecomp-site
+        - credentialsId: sdc-dcae-d-dt
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: sdc-dcae-d-dt
+          serverId: nexus3.onap.org:10002
+        - credentialsId: sdc-dcae-d-dt
+          serverId: nexus3.onap.org:10003
+        - credentialsId: sdc-dcae-d-dt
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: sdc-dcae-d-fe-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: sdc-dcae-d-fe-settings
+        isReplaceAll: true
+        name: sdc-dcae-d-fe-settings
+        serverCredentialMappings:
+        - credentialsId: sdc-dcae-d-fe
+          serverId: ecomp-snapshots
+        - credentialsId: sdc-dcae-d-fe
+          serverId: ecomp-site
+        - credentialsId: sdc-dcae-d-fe
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: sdc-dcae-d-fe
+          serverId: nexus3.onap.org:10002
+        - credentialsId: sdc-dcae-d-fe
+          serverId: nexus3.onap.org:10003
+        - credentialsId: sdc-dcae-d-fe
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: sdc-dcae-d-rule-engine-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: sdc-dcae-d-rule-engine-settings
+        isReplaceAll: true
+        name: sdc-dcae-d-rule-engine-settings
+        serverCredentialMappings:
+        - credentialsId: sdc-dcae-d-rule-engine
+          serverId: ecomp-snapshots
+        - credentialsId: sdc-dcae-d-rule-engine
+          serverId: ecomp-site
+        - credentialsId: sdc-dcae-d-rule-engine
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: sdc-dcae-d-rule-engine
+          serverId: nexus3.onap.org:10002
+        - credentialsId: sdc-dcae-d-rule-engine
+          serverId: nexus3.onap.org:10003
+        - credentialsId: sdc-dcae-d-rule-engine
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: sdc-dcae-d-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: sdc-dcae-d-settings
+        isReplaceAll: true
+        name: sdc-dcae-d-settings
+        serverCredentialMappings:
+        - credentialsId: sdc-dcae-d
+          serverId: ecomp-snapshots
+        - credentialsId: sdc-dcae-d
+          serverId: ecomp-site
+        - credentialsId: sdc-dcae-d
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: sdc-dcae-d
+          serverId: nexus3.onap.org:10002
+        - credentialsId: sdc-dcae-d
+          serverId: nexus3.onap.org:10003
+        - credentialsId: sdc-dcae-d
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: sdc-dcae-d-tosca-lab-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: sdc-dcae-d-tosca-lab-settings
+        isReplaceAll: true
+        name: sdc-dcae-d-tosca-lab-settings
+        serverCredentialMappings:
+        - credentialsId: sdc-dcae-d-tosca-lab
+          serverId: ecomp-snapshots
+        - credentialsId: sdc-dcae-d-tosca-lab
+          serverId: ecomp-site
+        - credentialsId: sdc-dcae-d-tosca-lab
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: sdc-dcae-d-tosca-lab
+          serverId: nexus3.onap.org:10002
+        - credentialsId: sdc-dcae-d-tosca-lab
+          serverId: nexus3.onap.org:10003
+        - credentialsId: sdc-dcae-d-tosca-lab
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: sdc-jtosca-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: sdc-jtosca-settings
+        isReplaceAll: true
+        name: sdc-jtosca-settings
+        serverCredentialMappings:
+        - credentialsId: sdc-jtosca
+          serverId: ecomp-snapshots
+        - credentialsId: sdc-jtosca
+          serverId: ecomp-site
+        - credentialsId: sdc-jtosca
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: sdc-jtosca
+          serverId: nexus3.onap.org:10002
+        - credentialsId: sdc-jtosca
+          serverId: nexus3.onap.org:10003
+        - credentialsId: sdc-jtosca
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: sdc-microservices-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: sdc-microservices-settings
+        isReplaceAll: true
+        name: sdc-microservices-settings
+        serverCredentialMappings:
+        - credentialsId: sdc-microservices
+          serverId: ecomp-snapshots
+        - credentialsId: sdc-microservices
+          serverId: ecomp-site
+        - credentialsId: sdc-microservices
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: sdc-microservices
+          serverId: nexus3.onap.org:10002
+        - credentialsId: sdc-microservices
+          serverId: nexus3.onap.org:10003
+        - credentialsId: sdc-microservices
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: sdc-onap-ui-angular-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: sdc-onap-ui-angular-settings
+        isReplaceAll: true
+        name: sdc-onap-ui-angular-settings
+        serverCredentialMappings:
+        - credentialsId: sdc-onap-ui-angular
+          serverId: ecomp-snapshots
+        - credentialsId: sdc-onap-ui-angular
+          serverId: ecomp-site
+        - credentialsId: sdc-onap-ui-angular
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: sdc-onap-ui-angular
+          serverId: nexus3.onap.org:10002
+        - credentialsId: sdc-onap-ui-angular
+          serverId: nexus3.onap.org:10003
+        - credentialsId: sdc-onap-ui-angular
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: sdc-onap-ui-common-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: sdc-onap-ui-common-settings
+        isReplaceAll: true
+        name: sdc-onap-ui-common-settings
+        serverCredentialMappings:
+        - credentialsId: sdc-onap-ui-common
+          serverId: ecomp-snapshots
+        - credentialsId: sdc-onap-ui-common
+          serverId: ecomp-site
+        - credentialsId: sdc-onap-ui-common
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: sdc-onap-ui-common
+          serverId: nexus3.onap.org:10002
+        - credentialsId: sdc-onap-ui-common
+          serverId: nexus3.onap.org:10003
+        - credentialsId: sdc-onap-ui-common
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: sdc-onap-ui-react-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: sdc-onap-ui-react-settings
+        isReplaceAll: true
+        name: sdc-onap-ui-react-settings
+        serverCredentialMappings:
+        - credentialsId: sdc-onap-ui-react
+          serverId: ecomp-snapshots
+        - credentialsId: sdc-onap-ui-react
+          serverId: ecomp-site
+        - credentialsId: sdc-onap-ui-react
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: sdc-onap-ui-react
+          serverId: nexus3.onap.org:10002
+        - credentialsId: sdc-onap-ui-react
+          serverId: nexus3.onap.org:10003
+        - credentialsId: sdc-onap-ui-react
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: sdc-onap-ui-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: sdc-onap-ui-settings
+        isReplaceAll: true
+        name: sdc-onap-ui-settings
+        serverCredentialMappings:
+        - credentialsId: sdc-onap-ui
+          serverId: ecomp-snapshots
+        - credentialsId: sdc-onap-ui
+          serverId: ecomp-site
+        - credentialsId: sdc-onap-ui
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: sdc-onap-ui
+          serverId: nexus3.onap.org:10002
+        - credentialsId: sdc-onap-ui
+          serverId: nexus3.onap.org:10003
+        - credentialsId: sdc-onap-ui
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: sdc-sdc-be-common-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: sdc-sdc-be-common-settings
+        isReplaceAll: true
+        name: sdc-sdc-be-common-settings
+        serverCredentialMappings:
+        - credentialsId: sdc-sdc-be-common
+          serverId: ecomp-snapshots
+        - credentialsId: sdc-sdc-be-common
+          serverId: ecomp-site
+        - credentialsId: sdc-sdc-be-common
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: sdc-sdc-be-common
+          serverId: nexus3.onap.org:10002
+        - credentialsId: sdc-sdc-be-common
+          serverId: nexus3.onap.org:10003
+        - credentialsId: sdc-sdc-be-common
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: sdc-sdc-distribution-client-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: sdc-sdc-distribution-client-settings
+        isReplaceAll: true
+        name: sdc-sdc-distribution-client-settings
+        serverCredentialMappings:
+        - credentialsId: sdc-sdc-distribution-client
+          serverId: ecomp-snapshots
+        - credentialsId: sdc-sdc-distribution-client
+          serverId: ecomp-site
+        - credentialsId: sdc-sdc-distribution-client
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: sdc-sdc-distribution-client
+          serverId: nexus3.onap.org:10002
+        - credentialsId: sdc-sdc-distribution-client
+          serverId: nexus3.onap.org:10003
+        - credentialsId: sdc-sdc-distribution-client
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: sdc-sdc-docker-base-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: sdc-sdc-docker-base-settings
+        isReplaceAll: true
+        name: sdc-sdc-docker-base-settings
+        serverCredentialMappings:
+        - credentialsId: sdc-sdc-docker-base
+          serverId: ecomp-snapshots
+        - credentialsId: sdc-sdc-docker-base
+          serverId: ecomp-site
+        - credentialsId: sdc-sdc-docker-base
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: sdc-sdc-docker-base
+          serverId: nexus3.onap.org:10002
+        - credentialsId: sdc-sdc-docker-base
+          serverId: nexus3.onap.org:10003
+        - credentialsId: sdc-sdc-docker-base
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: sdc-sdc-helm-validator-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: sdc-sdc-helm-validator-settings
+        isReplaceAll: true
+        name: sdc-sdc-helm-validator-settings
+        serverCredentialMappings:
+        - credentialsId: sdc-sdc-helm-validator
+          serverId: ecomp-snapshots
+        - credentialsId: sdc-sdc-helm-validator
+          serverId: ecomp-site
+        - credentialsId: sdc-sdc-helm-validator
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: sdc-sdc-helm-validator
+          serverId: nexus3.onap.org:10002
+        - credentialsId: sdc-sdc-helm-validator
+          serverId: nexus3.onap.org:10003
+        - credentialsId: sdc-sdc-helm-validator
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: sdc-sdc-pubsub-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: sdc-sdc-pubsub-settings
+        isReplaceAll: true
+        name: sdc-sdc-pubsub-settings
+        serverCredentialMappings:
+        - credentialsId: sdc-sdc-pubsub
+          serverId: ecomp-snapshots
+        - credentialsId: sdc-sdc-pubsub
+          serverId: ecomp-site
+        - credentialsId: sdc-sdc-pubsub
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: sdc-sdc-pubsub
+          serverId: nexus3.onap.org:10002
+        - credentialsId: sdc-sdc-pubsub
+          serverId: nexus3.onap.org:10003
+        - credentialsId: sdc-sdc-pubsub
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: sdc-sdc-titan-cassandra-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: sdc-sdc-titan-cassandra-settings
+        isReplaceAll: true
+        name: sdc-sdc-titan-cassandra-settings
+        serverCredentialMappings:
+        - credentialsId: sdc-sdc-titan-cassandra
+          serverId: ecomp-snapshots
+        - credentialsId: sdc-sdc-titan-cassandra
+          serverId: ecomp-site
+        - credentialsId: sdc-sdc-titan-cassandra
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: sdc-sdc-titan-cassandra
+          serverId: nexus3.onap.org:10002
+        - credentialsId: sdc-sdc-titan-cassandra
+          serverId: nexus3.onap.org:10003
+        - credentialsId: sdc-sdc-titan-cassandra
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: sdc-sdc-tosca-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: sdc-sdc-tosca-settings
+        isReplaceAll: true
+        name: sdc-sdc-tosca-settings
+        serverCredentialMappings:
+        - credentialsId: sdc-sdc-tosca
+          serverId: ecomp-snapshots
+        - credentialsId: sdc-sdc-tosca
+          serverId: ecomp-site
+        - credentialsId: sdc-sdc-tosca
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: sdc-sdc-tosca
+          serverId: nexus3.onap.org:10002
+        - credentialsId: sdc-sdc-tosca
+          serverId: nexus3.onap.org:10003
+        - credentialsId: sdc-sdc-tosca
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: sdc-sdc-vnfdesign-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: sdc-sdc-vnfdesign-settings
+        isReplaceAll: true
+        name: sdc-sdc-vnfdesign-settings
+        serverCredentialMappings:
+        - credentialsId: sdc-sdc-vnfdesign
+          serverId: ecomp-snapshots
+        - credentialsId: sdc-sdc-vnfdesign
+          serverId: ecomp-site
+        - credentialsId: sdc-sdc-vnfdesign
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: sdc-sdc-vnfdesign
+          serverId: nexus3.onap.org:10002
+        - credentialsId: sdc-sdc-vnfdesign
+          serverId: nexus3.onap.org:10003
+        - credentialsId: sdc-sdc-vnfdesign
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: sdc-sdc-workflow-designer-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: sdc-sdc-workflow-designer-settings
+        isReplaceAll: true
+        name: sdc-sdc-workflow-designer-settings
+        serverCredentialMappings:
+        - credentialsId: sdc-sdc-workflow-designer
+          serverId: ecomp-snapshots
+        - credentialsId: sdc-sdc-workflow-designer
+          serverId: ecomp-site
+        - credentialsId: sdc-sdc-workflow-designer
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: sdc-sdc-workflow-designer
+          serverId: nexus3.onap.org:10002
+        - credentialsId: sdc-sdc-workflow-designer
+          serverId: nexus3.onap.org:10003
+        - credentialsId: sdc-sdc-workflow-designer
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: sdc-sdc_common-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: sdc-sdc_common-settings
+        isReplaceAll: true
+        name: sdc-sdc_common-settings
+        serverCredentialMappings:
+        - credentialsId: sdc-sdc_common
+          serverId: ecomp-snapshots
+        - credentialsId: sdc-sdc_common
+          serverId: ecomp-site
+        - credentialsId: sdc-sdc_common
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: sdc-sdc_common
+          serverId: nexus3.onap.org:10002
+        - credentialsId: sdc-sdc_common
+          serverId: nexus3.onap.org:10003
+        - credentialsId: sdc-sdc_common
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: sdc-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: sdc-settings
+        isReplaceAll: true
+        name: sdc-settings
+        serverCredentialMappings:
+        - credentialsId: sdc
+          serverId: ecomp-snapshots
+        - credentialsId: sdc
+          serverId: ecomp-site
+        - credentialsId: sdc
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: sdc
+          serverId: nexus3.onap.org:10002
+        - credentialsId: sdc
+          serverId: nexus3.onap.org:10003
+        - credentialsId: sdc
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: sdc-zusammen
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: sdc-zusammen-settings
+        isReplaceAll: true
+        name: sdc-zusammen
+        serverCredentialMappings:
+        - credentialsId: sdc-zusammen
+          serverId: ecomp-snapshots
+        - credentialsId: sdc-zusammen
+          serverId: ecomp-site
+        - credentialsId: sdc-zusammen
+          serverId: ecomp-staging
+        - credentialsId: sdc-zusammen
+          serverId: nexus3.onap.org:10001
+        - credentialsId: sdc-zusammen
+          serverId: nexus3.onap.org:10002
+        - credentialsId: sdc-zusammen
+          serverId: nexus3.onap.org:10003
+        - credentialsId: sdc-zusammen
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: sdc.dcae-d-tosca-lab-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: sdc.dcae-d-tosca-lab-settings
+        isReplaceAll: true
+        name: sdc.dcae-d-tosca-lab-settings
+        serverCredentialMappings:
+        - credentialsId: sdc.dcae-d-tosca-lab
+          serverId: ecomp-snapshots
+        - credentialsId: sdc.dcae-d-tosca-lab
+          serverId: ecomp-site
+        - credentialsId: sdc.dcae-d-tosca-lab
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: sdc.dcae-d-tosca-lab
+          serverId: nexus3.onap.org:10002
+        - credentialsId: sdc.dcae-d-tosca-lab
+          serverId: nexus3.onap.org:10003
+        - credentialsId: sdc.dcae-d-tosca-lab
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: sdc_distribution_client-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: sdc_distribution_client-settings
+        isReplaceAll: true
+        name: sdc_distribution_client-settings
+        serverCredentialMappings:
+        - credentialsId: sdc_distribution_client
+          serverId: ecomp-snapshots
+        - credentialsId: sdc_distribution_client
+          serverId: ecomp-site
+        - credentialsId: sdc_distribution_client
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: sdc_distribution_client
+          serverId: nexus3.onap.org:10002
+        - credentialsId: sdc_distribution_client
+          serverId: nexus3.onap.org:10003
+        - credentialsId: sdc_distribution_client
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io
+    - mavenSettings:
+        comment: sdnc-adaptors-settings
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          </settings>
+        id: sdnc-adaptors-settings
+        isReplaceAll: true
+        name: sdnc-adaptors-settings
+        serverCredentialMappings:
+        - credentialsId: sdnc-adaptors
+          serverId: ecomp-snapshots
+        - credentialsId: sdnc-adaptors
+          serverId: ecomp-site
+        - credentialsId: sdnc-adaptors
+          serverId: ecomp-staging
+        - credentialsId: read-only-docker
+          serverId: nexus3.onap.org:10001
+        - credentialsId: sdnc-adaptors
+          serverId: nexus3.onap.org:10002
+        - credentialsId: sdnc-adaptors
+          serverId: nexus3.onap.org:10003
+        - credentialsId: sdnc-adaptors
+          serverId: nexus3.onap.org:10004
+        - credentialsId: onap_dockerhub_creds
+          serverId: docker.io

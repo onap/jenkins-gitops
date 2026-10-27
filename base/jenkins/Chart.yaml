@@ -1,0 +1,23 @@
+---
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-FileCopyrightText: 2026 ONAP Contributors
+# Wrapper chart around the official Jenkins Helm chart.
+#
+# The wrapper adds:
+#   - jcasc/*.yaml      JCasC files, shipped as ConfigMaps the chart's
+#                       config-reload sidecar picks up (templates/jcasc-configmaps.yaml)
+#   - secret-keys.txt   list of keys the JCasC Secret must provide
+#
+# Upgrading: bump the dependency version below, run `helm dependency update`,
+# and commit Chart.lock together with this file.
+apiVersion: v2
+name: onap-jenkins
+description: Jenkins controller for jenkins.onap.org, configured by JCasC
+type: application
+version: 0.1.0
+appVersion: "2.462.3"
+
+dependencies:
+  - name: jenkins
+    version: 5.8.68
+    repository: https://charts.jenkins.io

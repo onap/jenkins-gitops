@@ -1,0 +1,114 @@
+---
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-FileCopyrightText: 2026 ONAP Contributors
+#
+# Generated from the JCasC export of jenkins.onap.org (Jenkins 2.462.3).
+# Secret values are ${key} references resolved from the SECRETS directory.
+tool:
+  git:
+    installations:
+    - home: git
+      name: Default
+  go:
+    installations:
+    - name: Golang 1.10
+      properties:
+      - installSource:
+          installers:
+          - golangInstaller:
+              id: '1.10'
+    - name: Golang 1.11
+      properties:
+      - installSource:
+          installers:
+          - golangInstaller:
+              id: '1.11'
+    - name: Golang 1.12
+      properties:
+      - installSource:
+          installers:
+          - golangInstaller:
+              id: 1.12.4
+    - name: Golang 1.14
+      properties:
+      - installSource:
+          installers:
+          - golangInstaller:
+              id: 1.14.4
+    - name: Golang 1.23
+      properties:
+      - installSource:
+          installers:
+          - golangInstaller:
+              id: 1.23.4
+  jdk:
+    installations:
+    - home: /usr/lib/jvm/java-1.7.0
+      name: openjdk7
+    - home: /usr/lib/jvm/java-1.8.0
+      name: openjdk8
+    - home: /usr/lib/jvm/java-11-openjdk
+      name: openjdk11
+    - home: /usr/lib/jvm/java-12-openjdk
+      name: openjdk12
+    - home: /usr/lib/jvm/java-1.13.0-openjdk-amd64
+      name: openjdk13
+    - home: /usr/lib/jvm/java-17-openjdk
+      name: openjdk17
+  maven:
+    installations:
+    - name: mvn38
+      properties:
+      - installSource:
+          installers:
+          - maven:
+              id: 3.8.3
+          - batchFile:
+              command: "MAVEN_INSTALL_VER=3.8.3\r\nif [ ! -f /w/tools/hudson.tasks.Maven_MavenInstallation/apache-maven-^${MAVEN_INSTALL_VER}-bin.tar.gz ]\r\nthen\r\n  cd /w\r\n  mkdir -p /w/tools/hudson.tasks.Maven_MavenInstallation\r\n  cd /w/tools/hudson.tasks.Maven_MavenInstallation/\r\n  wget https://nexus.opendaylight.org/content/repositories/hosted_installers/apache-maven/apache-maven/^${MAVEN_INSTALL_VER}/apache-maven-^${MAVEN_INSTALL_VER}-bin.tar.gz\r\n  tar xfv apache-maven-^${MAVEN_INSTALL_VER}-bin.tar.gz\r\n  for i in bin boot conf lib\r\n  do\r\n    ln -s ../apache-maven-^${MAVEN_INSTALL_VER}/^${i} mvn38/\r\n  done\r\nelse\r\n  echo \"Maven ^${MAVEN_INSTALL_VER} already installed\"\r\nfi"
+              toolHome: /w/tools/hudson.tasks.Maven_MavenInstallation/apache-maven-3.8.3/
+    - name: mvn33-new
+      properties:
+      - installSource:
+          installers:
+          - batchFile:
+              command: "#!/bin/bash\r\n\r\n# variables\r\nMAVEN_INSTALL_VER=3.3.9\r\nMVNLOC=./mvn33\r\nINSTALL_PATH=/w/tools/hudson.tasks.Maven_MavenInstallation\r\n\r\nif [ ! -f ^${INSTALL_PATH}/apache-maven-^${MAVEN_INSTALL_VER}-bin.tar.gz ]\r\nthen\r\n  cd /w\r\n  mkdir -p ^${INSTALL_PATH}\r\n  cd ^${INSTALL_PATH}\r\n  wget ^${NEXUSPROXY}/content/repositories/hosted_installers/apache-maven/apache-maven/^${MAVEN_INSTALL_VER}/apache-maven-^${MAVEN_INSTALL_VER}-bin.tar.gz\r\n  tar xfv apache-maven-^${MAVEN_INSTALL_VER}-bin.tar.gz\r\n  for i in bin boot conf lib\r\n  do\r\n    ln -s ../apache-maven-^${MAVEN_INSTALL_VER}/^${i} ^${MVNLOC}\r\n  done\r\nelse\r\n  echo \"Maven ^${MAVEN_INSTALL_VER} already installed\"\r\nfi"
+              toolHome: /w/tools/hudson.tasks.Maven_MavenInstallation/apache-maven-3.3.9/
+    - name: mvn33
+      properties:
+      - installSource:
+          installers:
+          - maven:
+              id: 3.3.9
+    - name: mvn35
+      properties:
+      - installSource:
+          installers:
+          - maven:
+              id: 3.5.4
+    - name: mvn36
+      properties:
+      - installSource:
+          installers:
+          - maven:
+              id: 3.6.3
+    - name: mvn39
+      properties:
+      - installSource:
+          installers:
+          - maven:
+              id: 3.9.9
+  mavenGlobalConfig:
+    globalSettingsProvider:
+      mvn:
+        settingsConfigId: global-settings
+    settingsProvider: standard
+  nodejs:
+    installations:
+    - name: nodejs14
+      properties:
+      - installSource:
+          installers:
+          - nodeJSInstaller:
+              id: 14.17.1
+              npmPackages: node@14.17.1 npm@6.14.13
+              npmPackagesRefreshHours: 72

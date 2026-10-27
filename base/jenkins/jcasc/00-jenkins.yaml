@@ -1,0 +1,151 @@
+---
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-FileCopyrightText: 2026 ONAP Contributors
+#
+# Generated from the JCasC export of jenkins.onap.org (Jenkins 2.462.3).
+# Secret values are ${key} references resolved from the SECRETS directory.
+jenkins:
+  agentProtocols:
+  - JNLP4-connect
+  - Ping
+  crumbIssuer:
+    standard:
+      excludeClientIPFromCrumb: false
+  disableRememberMe: false
+  disabledAdministrativeMonitors:
+  - hudson.node_monitors.MonitorMarkedNodeOffline
+  - org.jenkinsci.plugins.matrixauth.AmbiguityMonitor
+  - OldData
+  - hudson.util.DoubleLaunchChecker
+  - jenkins.security.QueueItemAuthenticatorMonitor
+  - jenkins.security.s2m.MasterKillSwitchWarning
+  globalNodeProperties:
+  - envVars:
+      env:
+      - key: CONTAINER_PULL_REGISTRY
+        value: nexus3.onap.org:10003
+      - key: CONTAINER_PUSH_REGISTRY
+        value: nexus3.onap.org:10002
+      - key: DOCKER_REGISTRY
+        value: nexus3.onap.org
+      - key: DOCKERHUB_REGISTRY
+        value: docker.io
+      - key: GERRIT_URL
+        value: https://gerrit.onap.org/r
+      - key: GIT_BASE
+        value: git://cloud.onap.org/mirror/$PROJECT.git
+      - key: GIT_NO_PROJECT
+        value: git://cloud.onap.org/mirror
+      - key: GIT_URL
+        value: git://cloud.onap.org/mirror
+      - key: JENKINS_HOSTNAME
+        value: ${JENKINS_HOSTNAME}
+      - key: JIRA_URL
+        value: https://jira.onap.org
+      - key: LOGS_REPO_URL
+        value: https://nexus.onap.org/service/local/repositories/logs
+      - key: LOGS_SERVER
+        value: https://logs.onap.org
+      - key: MASTER_RTD_PROJECT
+        value: ${MASTER_RTD_PROJECT}
+      - key: NEXUS_URL
+        value: https://nexus.onap.org
+      - key: NEXUSPROXY
+        value: https://nexus.onap.org
+      - key: REGISTRY_PORTS
+        value: 10001 10002 10003 10004
+      - key: RELEASE_EMAIL
+        value: collab-it+onap-release@linuxfoundation.org
+      - key: RELEASE_USERNAME
+        value: onap-release
+      - key: S3_BUCKET
+        value: ''
+      - key: SIGUL_BRIDGE_IP
+        value: 199.204.45.55
+      - key: SIGUL_KEY
+        value: ${SIGUL_KEY}
+      - key: SILO
+        value: ${SILO}
+      - key: SONAR_URL
+        value: https://sonar.onap.org
+  labelAtoms:
+  - name: centos7-docker-2c-1g
+  - name: centos8-builder-2c-1g
+  - name: centos8-builder-4c-4g
+  - name: centos8-docker-2c-8g
+  - name: centos8-docker-4c-4g
+  - name: centos8-docker-8c-8g
+  - name: centos8-redis-4c-4g
+  - name: master
+  - name: prd-queue-docker-4c-4g-4913
+  - name: prd-ubuntu1804-docker-8c-8g-5736
+  - name: prd-ubuntu2204-docker-8c-8g-5735
+  - name: prd-ubuntu2204-docker-8c-8g-5737
+  - name: queue-docker-4c-4g
+  - name: ubuntu1804-builder-4c-4g
+  - name: ubuntu1804-docker-8c-16g
+  - name: ubuntu1804-docker-8c-8g
+  - name: ubuntu1804-docker-v1-8c-8g
+  - name: ubuntu2004-builder-4c-4g
+  - name: ubuntu2004-devstack-4c-16g
+  - name: ubuntu2004-docker-2c-1g
+  - name: ubuntu2004-docker-2c-2g
+  - name: ubuntu2004-docker-4c-4g
+  - name: ubuntu2004-docker-8c-16g
+  - name: ubuntu2004-docker-8c-8g
+  - name: ubuntu2004-docker-v1-8c-8g
+  - name: ubuntu2004-helm-2c-1g
+  - name: ubuntu2004-memcached-4c-4g
+  - name: ubuntu2204-builder-4c-4g
+  - name: ubuntu2204-docker-4c-4g
+  - name: ubuntu2204-docker-8c-16g
+  - name: ubuntu2204-docker-8c-8g
+  - name: ubuntu2204-docker-v1-8c-8g
+  log:
+    recorders:
+    - loggers:
+      - level: INFO
+        name: org.datadog
+      name: Datadog Plugin Logs
+  markupFormatter:
+    rawHtml:
+      disableSyntaxHighlighting: false
+  mode: NORMAL
+  myViewsTabBar: standard
+  nodeMonitors:
+  - architecture
+  - clock
+  - diskSpace:
+      freeSpaceThreshold: 1GB
+      freeSpaceWarningThreshold: 2GB
+  - swapSpace
+  - tmpSpace:
+      freeSpaceThreshold: 1GB
+      freeSpaceWarningThreshold: 2GB
+  - responseTime
+  numExecutors: 0
+  primaryView:
+    list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: |-
+        Empty job view. This is used as the default landing view to keep the Jenkins UI responding better while a) under high load and b) when there are a lot of jobs defined in the system
+        <!-- Managed by Jenkins Job Builder -->
+      name: 00-Empty View
+  projectNamingStrategy: standard
+  quietPeriod: 5
+  remotingSecurity:
+    enabled: true
+  scmCheckoutRetryCount: 0
+  slaveAgentPort: -1
+  updateCenter:
+    sites:
+    - id: default
+      url: https://eastamerica.cloudflare.jenkins.io/dynamic-stable-2.462.3/update-center.json
+  viewsTabBar: standard

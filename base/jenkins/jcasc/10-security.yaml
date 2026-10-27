@@ -1,0 +1,111 @@
+---
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-FileCopyrightText: 2026 ONAP Contributors
+#
+# Generated from the JCasC export of jenkins.onap.org (Jenkins 2.462.3).
+# Secret values are ${key} references resolved from the SECRETS directory.
+security:
+  anonymizeSupportBundle:
+    enabled: false
+  apiToken:
+    creationOfLegacyTokenEnabled: false
+    tokenGenerationOnCreationEnabled: false
+    usageStatisticsEnabled: true
+  cps:
+    hideSandbox: false
+  envInject:
+    enableLoadingFromMaster: false
+    enablePermissions: false
+    hideInjectedVars: false
+  gitHooks:
+    allowedOnAgents: false
+    allowedOnController: false
+  gitHostKeyVerificationConfiguration:
+    sshHostKeyVerificationStrategy:
+      manuallyProvidedKeyVerificationStrategy:
+        approvedHostKeys: |-
+          [gerrit.onap.org]:29418 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBPZTnV/GUJsWzov52aYbxZ7WquyFeBGkpUw22LXFufBLscyxqaKzHdyq/BVyX34jAG6hvPHRNlBYhw/EDBniHgQ=
+          [gerrit.onap.org]:29418 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOVb9qykqLGsAZa2A9zk2/R9ZLLTLHTNveuuB6kuIjvD
+  sSHD:
+    port: -1
+  scriptApproval:
+    approvedScriptHashes:
+    - 2a277906a161a17f4f9c7ae7ab13b42b4d14002c
+    - SHA512:3f205299bef2fe3329258a42f2c60d332cc35ccb41a3ca0512d7869c6aff4561ff708c48123b4f7c3dec33ccca30d54fb8b9b51b5bc7070f96236d11a3f0bdcb
+    forceSandbox: false
+  updateSiteWarningsConfiguration:
+    ignoredWarnings:
+    - SECURITY-248
+globalCredentialsConfiguration:
+  configuration:
+    providerFilter: none
+    typeFilter: none
+appearance:
+  prism:
+    theme: PRISM
+advisor:
+  acceptToS: true
+  email: releng+onap-jenkins@linuxfoundation.org
+  excludedComponents:
+  - AgentsConfigFile
+  - ConfigFileComponent
+  - RootCAs
+  - EventListenersComponent
+  - SlaveLogs
+  - OtherConfigFilesComponent
+  - HeapUsageHistogram
+  - OtherLogs
+  - BuildMemoryComponent
+  nagDisabled: false
+support:
+  automatedBundleConfiguration:
+    componentIds:
+    - AgentsConfigFile
+    - ConfigFileComponent
+    - OtherConfigFilesComponent
+    - AboutBrowser
+    - AboutJenkins
+    - AboutUser
+    - AdministrativeMonitors
+    - BuildQueue
+    - CustomLogs
+    - DumpExportTable
+    - EnvironmentVariables
+    - FileDescriptorLimit
+    - GCLogs
+    - HeapUsageHistogram
+    - ItemsContent
+    - AgentsJVMProcessSystemMetricsContents
+    - MasterJVMProcessSystemMetricsContents
+    - JenkinsLogs
+    - LoadStats
+    - LoggerManager
+    - Metrics
+    - NetworkInterfaces
+    - NodeExecutors
+    - NodeMonitors
+    - OtherLogs
+    - ReverseProxy
+    - RootCAs
+    - RunningBuilds
+    - SlaveCommandStatistics
+    - SlaveLaunchLogs
+    - SlaveLogs
+    - AgentsSystemConfiguration
+    - MasterSystemConfiguration
+    - SystemProperties
+    - TaskLogs
+    - ThreadDumps
+    - UpdateCenter
+    - UserCount
+    - SlowRequestComponent
+    - SlowRequestThreadDumpsComponent
+    - HighLoadComponent
+    - DeadlockRequestComponent
+    - BuildMemoryComponent
+    - EventListenersComponent
+    - PipelineInternalCalls
+    - PipelineTimings
+    - PipelineThreadDump
+    enabled: true
+    period: 1

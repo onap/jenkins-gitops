@@ -1,0 +1,34 @@
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-FileCopyrightText: 2026 ONAP Contributors
+
+{{- /*
+One ConfigMap per file in jcasc/. The Jenkins chart's config-reload sidecar
+collects every ConfigMap in the namespace carrying the label
+"<jenkins fullname>-jenkins-config: true", writes the data keys as files into
+the CASC_JENKINS_CONFIG folder, and asks Jenkins to reload.
+
+Files are written in name order, so the numeric prefixes in jcasc/ define the
+load order. Files listed in jcasc.excludeFiles are skipped, which lets an
+environment replace one (local/values.yaml swaps 15-auth.yaml).
+*/ -}}
+{{- $fullname := required "jenkins.fullnameOverride must be set (the sidecar label depends on it)" .Values.jenkins.fullnameOverride }}
+{{- range $path, $_ := .Files.Glob "jcasc/*.yaml" }}
+{{- $file := base $path }}
+{{- if not (has $file $.Values.jcasc.excludeFiles) }}
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ printf "%s-jcasc-%s" $fullname (trimSuffix ".yaml" $file) }}
+  namespace: {{ $.Release.Namespace }}
+  labels:
+    app.kubernetes.io/name: {{ $fullname }}
+    app.kubernetes.io/instance: {{ $.Release.Name }}
+    app.kubernetes.io/component: jcasc
+    app.kubernetes.io/managed-by: {{ $.Release.Service }}
+    {{ $fullname }}-jenkins-config: "true"
+data:
+  {{ $file }}: |-
+{{ $.Files.Get $path | indent 4 }}
+{{- end }}
+{{- end }}

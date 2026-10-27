@@ -1,0 +1,240 @@
+---
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-FileCopyrightText: 2026 ONAP Contributors
+#
+# Generated from the JCasC export of jenkins.onap.org (Jenkins 2.462.3).
+# Secret values are ${key} references resolved from the SECRETS directory.
+# Source of truth was ci-management/jenkins-config/clouds/openstack/cattle.
+jenkins:
+  clouds:
+  - openstack:
+      credentialsId: vexx-ecompci
+      endPointUrl: https://auth.vexxhost.net/v3
+      ignoreSsl: false
+      name: cattle
+      slaveOptions:
+        bootSource:
+          image:
+            name: ZZCI - CentOS 7 - docker - x86_64 - 20220919-201912.261
+        fsRoot: /w
+        hardwareId: d6906d2a-e83f-42be-b33e-fbaeb5c511cb
+        instanceCap: 75
+        keyPairName: jenkins
+        launcherFactory:
+          ssh:
+            credentialsId: jenkins
+        networkId: bd089be9-e846-4afe-905b-8bb6c7c90faf
+        retentionTime: 1
+        userDataId: jenkins-init-script
+      templates:
+      - labels: ubuntu2204-docker-8c-8g
+        name: prd-ubuntu2204-docker-8c-8g
+        slaveOptions:
+          bootSource:
+            image:
+              name: ZZCI - Ubuntu 22.04 - docker - x86_64 - 20261023-072101.331
+          hardwareId: 47d3707a-c6c6-46ea-a15b-095e336b1edc
+          retentionTime: 0
+      - labels: centos7-docker-2c-1g
+        name: prd-centos7-docker-2c-1g
+        slaveOptions:
+          retentionTime: 0
+      - labels: ubuntu2004-memcached-4c-4g
+        name: prd-ubuntu2004-memcached-4c-4g
+        slaveOptions:
+          bootSource:
+            image:
+              name: Ubuntu 20.04 - memcached - x86_64 - 160580505-5011
+          hardwareId: 5f1eb09f-e764-4642-a16f-a7230ec025e7
+          retentionTime: 0
+      - labels: ubuntu2004-docker-4c-4g
+        name: prd-ubuntu2004-docker-4c-4g
+        slaveOptions:
+          bootSource:
+            image:
+              name: ZZCI - Ubuntu 20.04 - docker - x86_64 - 20230418-162442.280
+          hardwareId: 5f1eb09f-e764-4642-a16f-a7230ec025e7
+          retentionTime: 0
+      - labels: ubuntu2004-docker-v1-8c-8g
+        name: prd-ubuntu2004-docker-v1-8c-8g
+        slaveOptions:
+          bootSource:
+            image:
+              name: ZZCI - Ubuntu 20.04 - docker - x86_64 - 20230418-162442.280
+          hardwareId: 47d3707a-c6c6-46ea-a15b-095e336b1edc
+          retentionTime: 0
+      - labels: ubuntu2204-builder-4c-4g
+        name: prd-ubuntu2204-builder-4c-4g
+        slaveOptions:
+          bootSource:
+            image:
+              name: ZZCI - Ubuntu 22.04 - builder - x86_64 - 20261024-182203.123
+          hardwareId: 5f1eb09f-e764-4642-a16f-a7230ec025e7
+          retentionTime: 0
+      - labels: ubuntu2204-docker-4c-4g
+        name: prd-ubuntu2204-docker-4c-4g
+        slaveOptions:
+          bootSource:
+            image:
+              name: ZZCI - Ubuntu 22.04 - docker - x86_64 - 20261023-072101.331
+          hardwareId: 5f1eb09f-e764-4642-a16f-a7230ec025e7
+          retentionTime: 0
+      - labels: ubuntu2204-docker-v1-8c-8g ubuntu2204-builder-4c-4g
+        name: prd-ubuntu2204-docker-v1-8c-8g
+        slaveOptions:
+          bootSource:
+            image:
+              name: ZZCI - Ubuntu 22.04 - docker - x86_64 - 20261023-072101.331
+          hardwareId: 5f1eb09f-e764-4642-a16f-a7230ec025e7
+          retentionTime: 0
+      - labels: centos8-builder-4c-4g
+        name: prd-centos8-builder-4c-4g
+        slaveOptions:
+          bootSource:
+            image:
+              name: ZZCI - CentOS Stream 8 - builder - x86_64 - 20240210-033512.409
+          hardwareId: 5f1eb09f-e764-4642-a16f-a7230ec025e7
+          retentionTime: 0
+      - labels: centos8-docker-4c-4g
+        name: prd-centos8-docker-4c-4g
+        slaveOptions:
+          bootSource:
+            image:
+              name: ZZCI - CentOS Stream 8 - docker - x86_64 - 20230815-011808.903
+          hardwareId: 5f1eb09f-e764-4642-a16f-a7230ec025e7
+          retentionTime: 0
+      - labels: ubuntu2004-builder-4c-4g
+        name: prd-ubuntu2004-builder-4c-4g
+        slaveOptions:
+          bootSource:
+            image:
+              name: ZZCI - Ubuntu 20.04 - builder - x86_64 - 20251120-032659.948
+          hardwareId: 5f1eb09f-e764-4642-a16f-a7230ec025e7
+          retentionTime: 0
+      - labels: ubuntu2004-docker-2c-2g
+        name: prd-ubuntu2004-docker-2c-2g
+        slaveOptions:
+          bootSource:
+            image:
+              name: ZZCI - Ubuntu 20.04 - docker - x86_64 - 20230418-162442.280
+          retentionTime: 0
+      - labels: ubuntu2004-docker-8c-16g
+        name: prd-ubuntu2004-docker-8c-16g
+        slaveOptions:
+          bootSource:
+            image:
+              name: ZZCI - Ubuntu 20.04 - docker - x86_64 - 20230418-162442.280
+          hardwareId: 8587d458-69de-4fc5-be51-c5e671bc35d5
+          retentionTime: 0
+      - labels: ubuntu2204-docker-8c-16g
+        name: prd-ubuntu2204-docker-8c-16g
+        slaveOptions:
+          bootSource:
+            image:
+              name: ZZCI - Ubuntu 22.04 - docker - x86_64 - 20261023-072101.331
+          hardwareId: 8587d458-69de-4fc5-be51-c5e671bc35d5
+          retentionTime: 0
+      - labels: ubuntu1804-docker-8c-16g
+        name: prd-ubuntu1804-docker-8c-16g
+        slaveOptions:
+          bootSource:
+            image:
+              name: ZZCI - Ubuntu 18.04 - docker - x86_64 - 20220919-185927.020
+          hardwareId: 8587d458-69de-4fc5-be51-c5e671bc35d5
+          retentionTime: 0
+      - labels: ubuntu1804-docker-8c-8g
+        name: prd-ubuntu1804-docker-8c-8g
+        slaveOptions:
+          bootSource:
+            image:
+              name: ZZCI - Ubuntu 18.04 - docker - x86_64 - 20220919-185927.020
+          hardwareId: 47d3707a-c6c6-46ea-a15b-095e336b1edc
+          retentionTime: 0
+      - labels: ubuntu1804-docker-v1-8c-8g
+        name: prd-ubuntu1804-docker-v1-8c-8g
+        slaveOptions:
+          bootSource:
+            image:
+              name: ZZCI - Ubuntu 18.04 - docker - x86_64 - 20220919-185927.020
+          hardwareId: 47d3707a-c6c6-46ea-a15b-095e336b1edc
+          retentionTime: 0
+      - labels: queue-docker-4c-4g
+        name: prd-queue-docker-4c-4g
+        slaveOptions:
+          bootSource:
+            image:
+              name: ZZCI - Ubuntu 18.04 - docker - x86_64 - 20220919-185927.020
+          hardwareId: 5f1eb09f-e764-4642-a16f-a7230ec025e7
+          instanceCap: 1
+          numExecutors: 4
+          retentionTime: 4320
+      - labels: ubuntu1804-builder-4c-4g
+        name: prd-ubuntu1804-builder-4c-4g
+        slaveOptions:
+          bootSource:
+            image:
+              name: ZZCI - Ubuntu 18.04 - builder - x86_64 - 20221013-041722.509
+          hardwareId: 5f1eb09f-e764-4642-a16f-a7230ec025e7
+          retentionTime: 0
+      - labels: centos8-redis-4c-4g
+        name: prd-centos8-redis-4c-4g
+        slaveOptions:
+          bootSource:
+            image:
+              name: CentOS Stream 8 - redis -  - 310180101-1010
+          hardwareId: 5f1eb09f-e764-4642-a16f-a7230ec025e7
+          retentionTime: 0
+      - labels: ubuntu2004-helm-2c-1g
+        name: prd-ubuntu2004-helm-2c-1g
+        slaveOptions:
+          bootSource:
+            image:
+              name: ZZCI - Ubuntu 20.04 - helm - x86_64 - 20230405-210810.069
+          hardwareId: 5f1eb09f-e764-4642-a16f-a7230ec025e7
+          retentionTime: 0
+      - labels: centos8-builder-2c-1g
+        name: prd-centos8-builder-2c-1g
+        slaveOptions:
+          bootSource:
+            image:
+              name: ZZCI - CentOS Stream 8 - builder - x86_64 - 20240210-033512.409
+          retentionTime: 0
+      - labels: centos8-docker-2c-8g
+        name: prd-centos8-docker-2c-8g
+        slaveOptions:
+          bootSource:
+            image:
+              name: ZZCI - CentOS Stream 8 - docker - x86_64 - 20230815-011808.903
+          retentionTime: 0
+      - labels: centos8-docker-8c-8g
+        name: prd-centos8-docker-8c-8g
+        slaveOptions:
+          bootSource:
+            image:
+              name: ZZCI - CentOS Stream 8 - docker - x86_64 - 20230815-011808.903
+          hardwareId: 47d3707a-c6c6-46ea-a15b-095e336b1edc
+          retentionTime: 0
+      - labels: ubuntu2004-docker-2c-1g ubuntu2004-docker-2c-2g
+        name: prd-ubuntu2004-docker-2c-1g
+        slaveOptions:
+          bootSource:
+            image:
+              name: ZZCI - Ubuntu 20.04 - docker - x86_64 - 20230418-162442.280
+          retentionTime: 0
+      - labels: ubuntu2004-docker-8c-8g
+        name: prd-ubuntu2004-docker-8c-8g
+        slaveOptions:
+          bootSource:
+            image:
+              name: ZZCI - Ubuntu 20.04 - docker - x86_64 - 20230418-162442.280
+          hardwareId: 47d3707a-c6c6-46ea-a15b-095e336b1edc
+          retentionTime: 0
+      - labels: ubuntu2004-devstack-4c-16g
+        name: prd-ubuntu2004-devstack-4c-16g
+        slaveOptions:
+          bootSource:
+            image:
+              name: ZZCI - Ubuntu 20.04 - devstack - x86_64 - 20260927-113219.444
+          hardwareId: 5f1eb09f-e764-4642-a16f-a7230ec025e7
+          retentionTime: 0
+      zone: ca-ymq-1

@@ -1,0 +1,1185 @@
+---
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-FileCopyrightText: 2026 ONAP Contributors
+#
+# Generated from the JCasC export of jenkins.onap.org (Jenkins 2.462.3).
+# Secret values are ${key} references resolved from the SECRETS directory.
+# Views are also created by JJB (ci-management-views.yaml).
+jenkins:
+  views:
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: |-
+        Empty job view. This is used as the default landing view to keep the Jenkins UI responding better while a) under high load and b) when there are a lot of jobs defined in the system
+        <!-- Managed by Jenkins Job Builder -->
+      name: 00-Empty View
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      - robot
+      description: List of most recent jobs<!-- Managed by Jenkins Job Builder -->
+      includeRegex: .*
+      jobFilters:
+      - mostRecentJobsFilter:
+          checkStartTime: true
+          maxToInclude: 25
+      name: 01-Recent
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: |-
+        <h1>List of Coverity Scan static code analysis jobs</h1> <p>See <a href="https://wiki.onap.org/x/Y6vQAw">how to add your component to Coverity Scan</a> on ONAP Developer Wiki.</p>
+        <!-- Managed by Jenkins Job Builder -->
+      includeRegex: .*-coverity
+      name: All-Coverity
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of Sonar jobs<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^(?=.*-sonar)(?!.*-no-sonar).*
+      name: All-Sonar
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      - builtOnColumn
+      includeRegex: .*-*
+      jobFilters:
+      - buildTrendFilter:
+          amount: '180.0'
+          amountTypeString: Days
+          buildCountTypeString: All
+          includeExcludeTypeString: excludeUnmatched
+          statusTypeString: Failed
+      name: All-failed (180 days)
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      - builtOnColumn
+      includeRegex: .*-*
+      jobFilters:
+      - buildTrendFilter:
+          amount: '180.0'
+          amountTypeString: Days
+          buildCountTypeString: Latest
+          includeExcludeTypeString: excludeMatched
+          statusTypeString: Started
+      name: All-no-trigger (180 days)
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of CLM jobs<!-- Managed by Jenkins Job Builder -->
+      includeRegex: .*-clm-.*
+      name: CLM
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      - robot
+      description: List of CSIT jobs<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^(?=.*-csit-.*)(?!.*-verify-csit.*).*
+      name: CSIT
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      - robot
+      description: List of CSIT Verify jobs<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^.*-verify-csit.*
+      name: CSIT-Verify
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: <!-- Managed by Jenkins Job Builder -->
+      name: Daily-Jobs
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      - builtOnColumn
+      - robot
+      jobFilters:
+      - statusFilter:
+          statusFilter: false
+      name: Disabled jobs
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      includeRegex: ^lab-.*
+      name: External Labs
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: <!-- Managed by Jenkins Job Builder -->
+      name: External-Labs
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of Merge jobs<!-- Managed by Jenkins Job Builder -->
+      includeRegex: .*-merge-.*
+      name: Merge-Jobs
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of Release Merge jobs<!-- Managed by Jenkins Job Builder -->
+      includeRegex: .*release-merge.*
+      name: Release-Jobs
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of Nexus Thirdparty dependencies jobs<!-- Managed by Jenkins Job Builder -->
+      includeRegex: .*-thirdparty-.*
+      name: Thirdparty
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of Verify jobs<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^.*-verify-.*
+      name: Verify-Jobs
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for aai-aai-common.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^aai-aai-common-.*
+      name: aai-aai-common
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for aai-babel.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^aai-babel-.*
+      name: aai-babel
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for aai-graphadmin.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^aai-graphadmin-.*
+      name: aai-graphadmin
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for aai-graphgraph.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^aai-graphgraph-.*
+      name: aai-graphgraph
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for aai-logging-service.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^aai-logging-service-.*
+      name: aai-logging-service
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for aai-model-loader.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^aai-model-loader-.*
+      name: aai-model-loader
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for aai-resources.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^aai-resources-.*
+      name: aai-resources
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for aai-rest-client.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^aai-rest-client-.*
+      name: aai-rest-client
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for aai-schema-service.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^aai-schema-service-.*
+      name: aai-schema-service
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for aai-sparky.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^aai-sparky-.*
+      name: aai-sparky
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for aai-traversal.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^aai-traversal-.*
+      name: aai-traversal
+  - all:
+      name: all-jobs
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for ccsdk.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^ccsdk-.*
+      name: ccsdk
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for ci-management.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^ci-management-.*
+      name: ci-management
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for cps.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^cps-.*
+      name: cps
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for cps-ncmp-dmi-plugin.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^cps-ncmp-dmi-plugin-.*
+      name: cps-ncmp-dmi-plugin
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for dcaegen2.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^dcaegen2-.*
+      name: dcaegen2
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for dcaegen2-platform-ves-openapi-manager.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^dcaegen2-platform-ves-openapi-manager-.*
+      name: dcaegen2-platform-ves-openapi-manager
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for dcaegen2-services-pmsh.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^dcaegen2-services-pmsh-.*
+      name: dcaegen2-services-pmsh
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for demo.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^demo-.*
+      name: demo
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for doc.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^doc-.*
+      name: doc
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      includeRegex: .*-docker-.*
+      name: docker
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      - builtOnColumn
+      includeRegex: .*-helm-.*
+      name: helm
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for integration.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^integration-.*
+      name: integration
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for integration-data-provider.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^integration-data-provider-.*
+      name: integration-data-provider
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for integration-gating.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^integration-gating-.*
+      name: integration-gating
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for integration-ietf-actn-tools.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^integration-ietf-actn-tools-.*
+      name: integration-ietf-actn-tools
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for integration-python-onapsdk.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^integration-python-onapsdk-.*
+      name: integration-python-onapsdk
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for integration-simulators-nf-simulator-avcn-manager.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^integration-simulators-nf-simulator-avcn-manager-.*
+      name: integration-simulators-nf-simulator-avcn-manager
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for integration-simulators-nf-simulator-netconf-server.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^integration-simulators-nf-simulator-netconf-server-.*
+      name: integration-simulators-nf-simulator-netconf-server
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for integration-simulators-nf-simulator-pm-https-server.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^integration-simulators-nf-simulator-pm-https-server-.*
+      name: integration-simulators-nf-simulator-pm-https-server
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for integration-simulators-nf-simulator-ves-client.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^integration-simulators-nf-simulator-ves-client-.*
+      name: integration-simulators-nf-simulator-ves-client
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for integration-simulators-ran-nssmf-simulator.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^integration-simulators-ran-nssmf-simulator-.*
+      name: integration-simulators-ran-nssmf-simulator
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for multicloud.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^multicloud-.*
+      name: multicloud
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      - builtOnColumn
+      description: temporal view created by Kevin Sandi
+      includeRegex: ((?!master|management|lf-onap-release-docker-hub|sonar|oslo|paris).)*
+      name: oldbranches
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for oom.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^oom-.*
+      name: oom
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for oom-consul.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^oom-consul-.*
+      name: oom-consul
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for oom-platform-cert-manager.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^oom-platform-cert-manager-.*
+      name: oom-platform-cert-manager
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for oom-platform-cert-service.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^oom-platform-cert-service-.*
+      name: oom-platform-cert-service
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for oom-utils.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^oom-utils-.*
+      name: oom-utils
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for oparent.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^oparent-.*
+      name: oparent
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      includeRegex: ^openci-.*
+      name: openci
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      includeRegex: .*-packer-.*
+      name: packer
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for policy.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^policy-.*
+      name: policy
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for policy-opa-pdp.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^policy-opa-pdp-.*
+      name: policy-opa-pdp
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for portal-ng.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^portal-ng-.*
+      name: portal-ng
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for portal-ng-bff.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^portal-ng-bff-.*
+      name: portal-ng-bff
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for portal-ng-e2e.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^portal-ng-e2e-.*
+      name: portal-ng-e2e
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for portal-ng-history.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^portal-ng-history-.*
+      name: portal-ng-history
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for portal-ng-preferences.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^portal-ng-preferences-.*
+      name: portal-ng-preferences
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for portal-ng-ui.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^portal-ng-ui-.*
+      name: portal-ng-ui
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for relman.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^relman-.*
+      name: relman
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for rtdv3-global.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^rtdv3-global-.*
+      name: rtdv3-global
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for sdc.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^sdc-.*
+      name: sdc
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for sdc-maven.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^sdc-maven-.*
+      name: sdc-maven
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for sdc-onap-ui.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^sdc-onap-ui-.*
+      name: sdc-onap-ui
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for sdc-sdc-be-common.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^sdc-sdc-be-common-.*
+      name: sdc-sdc-be-common
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for sdc-sdc-distribution.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^sdc-sdc-distribution-.*
+      name: sdc-sdc-distribution
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for sdc-sdc-docker.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^sdc-sdc-docker-.*
+      name: sdc-sdc-docker
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for sdc-sdc-helm-validator.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^sdc-sdc-helm-validator-.*
+      name: sdc-sdc-helm-validator
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for sdc-sdc-tosca.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^sdc-sdc-tosca-.*
+      name: sdc-sdc-tosca
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for sdc-sdc-workflow.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^sdc-sdc-workflow-.*
+      name: sdc-sdc-workflow
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for sdc-zusammen.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^sdc-zusammen-.*
+      name: sdc-zusammen
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for sdnc.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^sdnc-.*
+      name: sdnc
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for so.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^so-.*
+      name: so
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for so-adapters-so-cnf-adapter.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^so-adapters-so-cnf-adapter-.*
+      name: so-adapters-so-cnf-adapter
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for so-adapters-so-etsi-sol003-adapter.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^so-adapters-so-etsi-sol003-adapter-.*
+      name: so-adapters-so-etsi-sol003-adapter
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for so-adapters-so-etsi-sol005-adapter.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^so-adapters-so-etsi-sol005-adapter-.*
+      name: so-adapters-so-etsi-sol005-adapter
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for so-adapters-so-nssmf-adapter.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^so-adapters-so-nssmf-adapter-.*
+      name: so-adapters-so-nssmf-adapter
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for so-adapters-so-oof-adapter.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^so-adapters-so-oof-adapter-.*
+      name: so-adapters-so-oof-adapter
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for so-so-admin-cockpit.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^so-so-admin-cockpit-.*
+      name: so-so-admin-cockpit
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for so-so-etsi-nfvo.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^so-so-etsi-nfvo-.*
+      name: so-so-etsi-nfvo
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for testsuite.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^testsuite-.*
+      name: testsuite
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for testsuite-cds-mock-odl.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^testsuite-cds-mock-odl-.*
+      name: testsuite-cds-mock-odl
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for testsuite-cds-mock-server.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^testsuite-cds-mock-server-.*
+      name: testsuite-cds-mock-server
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for testsuite-cds-mock-ssh.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^testsuite-cds-mock-ssh-.*
+      name: testsuite-cds-mock-ssh
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for testsuite-robot-utils.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^testsuite-robot-utils-.*
+      name: testsuite-robot-utils
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for usecase-ui.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^usecase-ui-.*
+      name: usecase-ui
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for usecase-ui-nlp.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^usecase-ui-nlp-.*
+      name: usecase-ui-nlp
+  - list:
+      columns:
+      - status
+      - weather
+      - jobName
+      - lastSuccess
+      - lastFailure
+      - lastDuration
+      - buildButton
+      description: List of jobs for vnfrqts.<!-- Managed by Jenkins Job Builder -->
+      includeRegex: ^vnfrqts-.*
+      name: vnfrqts

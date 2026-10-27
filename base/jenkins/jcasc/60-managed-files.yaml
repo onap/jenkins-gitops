@@ -1,0 +1,846 @@
+---
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-FileCopyrightText: 2026 ONAP Contributors
+#
+# Generated from the JCasC export of jenkins.onap.org (Jenkins 2.462.3).
+# Secret values are ${key} references resolved from the SECRETS directory.
+# Source of truth was ci-management/jenkins-config/managed-config-files.
+unclassified:
+  globalConfigFiles:
+    configs:
+    - custom:
+        comment: ansible config file
+        content: |
+          [defaults]
+          remote_tmp = ~/.ansible/tmp
+        id: ansible-cfg
+        name: ansible-cfg
+    - custom:
+        comment: Cloud auth credentials file
+        content: |
+          clouds:
+            vex:
+              auth:
+                project_name: ef6e8825-fc3a-4ebf-886a-ba51ada06a9c
+                username: "$CLOUDS_USR"
+                password: "$CLOUDS_PSW"
+                auth_url: 'https://auth.vexxhost.net/v3'
+                user_domain_name: Default
+                project_domain_name: Default
+              region_name: ca-ymq-1
+        customizedCredentialMappings:
+        - credentialsId: cloud-credentials
+          tokenKey: CLOUDS
+        id: clouds-yaml
+        name: clouds-yaml
+    - globalMavenSettings:
+        comment: Maven Global Settings file
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+          <!-- vi: set et smarttab sw=2 tabstop=2: -->
+
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+            <mirrors>
+              <mirror>
+                <id>release-mirror</id>
+                <name>Local Nexus mirror for builds</name>
+                <url>^${env.NEXUSPROXY}/content/repositories/public/</url>
+                <mirrorOf>central</mirrorOf>
+              </mirror>
+            </mirrors>
+
+            <profiles>
+              <profile>
+                <id>onap-settings</id>
+                <properties>
+                  <onap.nexus.url>https://nexus.onap.org</onap.nexus.url>
+                  <onap.nexus.rawrepo.baseurl.upload>https://nexus.onap.org/content/sites/raw</onap.nexus.rawrepo.baseurl.upload>
+                  <onap.nexus.rawrepo.baseurl.download>https://nexus.onap.org/service/local/repositories/raw/content</onap.nexus.rawrepo.baseurl.download>
+                  <onap.nexus.rawrepo.serverid>ecomp-raw</onap.nexus.rawrepo.serverid>
+
+                  <!-- properties for Nexus Docker registry -->
+                  <onap.nexus.dockerregistry.daily>nexus3.onap.org:10003</onap.nexus.dockerregistry.daily>
+                  <onap.nexus.dockerregistry.release>nexus3.onap.org:10002</onap.nexus.dockerregistry.release>
+                  <docker.pull.registry>nexus3.onap.org:10001</docker.pull.registry>
+                  <docker.push.registry>nexus3.onap.org:10003</docker.push.registry>
+                </properties>
+              </profile>
+              <profile>
+                <id>releases</id>
+                <repositories>
+                  <repository>
+                    <id>releases</id>
+                    <name>releases</name>
+                    <url>^${env.NEXUSPROXY}/content/repositories/releases/</url>
+                    <releases>
+                      <enabled>true</enabled>
+                      <updatePolicy>never</updatePolicy>
+                    </releases>
+                    <snapshots>
+                      <enabled>false</enabled>
+                    </snapshots>
+                  </repository>
+                </repositories>
+
+                <pluginRepositories>
+                  <pluginRepository>
+                    <id>releases</id>
+                    <name>releases</name>
+                    <url>^${env.NEXUSPROXY}/content/repositories/releases/</url>
+                    <releases>
+                      <enabled>true</enabled>
+                      <updatePolicy>never</updatePolicy>
+                    </releases>
+                    <snapshots>
+                      <enabled>false</enabled>
+                    </snapshots>
+                  </pluginRepository>
+                </pluginRepositories>
+              </profile>
+
+              <profile>
+                <id>onap-public</id>
+                <repositories>
+                  <repository>
+                    <id>central</id>
+                    <url>http://repo1.maven.org/maven2/</url>
+                  </repository>
+                  <repository>
+                    <id>onap-public</id>
+                    <name>onap-public</name>
+                    <url>https://nexus.onap.org/content/repositories/public/</url>
+                    <releases>
+                      <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                      <enabled>false</enabled>
+                    </snapshots>
+                  </repository>
+                </repositories>
+                <pluginRepositories>
+                  <pluginRepository>
+                    <id>central</id>
+                    <url>http://repo1.maven.org/maven2/</url>
+                  </pluginRepository>
+                  <pluginRepository>
+                    <id>onap-public</id>
+                    <name>onap-public</name>
+                    <url>https://nexus.onap.org/content/repositories/public/</url>
+                    <releases>
+                      <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                      <enabled>false</enabled>
+                    </snapshots>
+                  </pluginRepository>
+                </pluginRepositories>
+              </profile>
+
+              <profile>
+                <id>staging</id>
+                <repositories>
+                  <repository>
+                    <id>staging</id>
+                    <name>staging</name>
+                    <url>^${env.NEXUSPROXY}/content/repositories/staging/</url>
+                    <releases>
+                      <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                      <enabled>false</enabled>
+                    </snapshots>
+                  </repository>
+                </repositories>
+              </profile>
+
+              <profile>
+                <id>snapshots</id>
+                <repositories>
+                  <repository>
+                    <id>snapshots</id>
+                    <name>snapshots</name>
+                    <url>^${env.NEXUSPROXY}/content/repositories/snapshots/</url>
+                    <releases>
+                      <enabled>false</enabled>
+                    </releases>
+                    <snapshots>
+                      <enabled>true</enabled>
+                    </snapshots>
+                  </repository>
+                </repositories>
+
+                <pluginRepositories>
+                  <pluginRepository>
+                    <id>snapshots</id>
+                    <name>snapshots</name>
+                    <url>^${env.NEXUSPROXY}/content/repositories/snapshots/</url>
+                    <releases>
+                      <enabled>false</enabled>
+                    </releases>
+                    <snapshots>
+                      <enabled>true</enabled>
+                    </snapshots>
+                  </pluginRepository>
+                </pluginRepositories>
+              </profile>
+              <profile>
+                <id>local_m2</id>
+                <repositories>
+                  <repository>
+                    <id>local_m2</id>
+                    <name>local_m2</name>
+                      <url>file:///tmp/r</url>
+                    <releases>
+                      <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                      <enabled>false</enabled>
+                    </snapshots>
+                  </repository>
+                </repositories>
+              </profile>
+            </profiles>
+
+            <activeProfiles>
+              <activeProfile>onap-public</activeProfile>
+              <activeProfile>onap-settings</activeProfile>
+              <activeProfile>releases</activeProfile>
+              <activeProfile>snapshots</activeProfile>
+              <activeProfile>local_m2</activeProfile>
+            </activeProfiles>
+          </settings>
+        id: global-settings
+        isReplaceAll: true
+        name: global-settings
+    - openstackUserData:
+        comment: CI management init
+        content: |
+          #!/bin/bash
+          until host github.com &>/dev/null
+          do
+              echo "Waiting until github.com is resolvable..."
+          done
+          git clone https://github.com/lfit/releng-global-jjb.git /opt/ciman/global-jjb
+          /opt/ciman/global-jjb/jenkins-init-scripts/init.sh
+
+          IPADDR=$(facter ipaddress)
+          HOSTNAME=$(facter hostname)
+          FQDN=$(facter fqdn)
+
+          echo "^${IPADDR} ^${HOSTNAME} ^${FQDN}" >> /etc/hosts
+        id: jenkins-init-script
+        name: jenkins-init-script
+    - custom:
+        comment: S3 log archives region
+        content: |
+          [default]
+          region=us-east-1
+        id: jenkins-s3-log-archives-region
+        name: jenkins-s3-log-archives-region
+    - custom:
+        comment: S3 log archives credentials
+        content: |
+          [default]
+          aws_access_key_id=Nothinghere
+          aws_secret_access_key=Nothinghere
+        id: jenkins-s3-log-archives-settings
+        name: jenkins-s3-log-archives-settings
+    - custom:
+        comment: jenkins-s3-log-ship
+        content: |
+          [default]
+          aws_access_key_id = NothingHere
+          aws_secret_access_key = NothingHere
+          region = us-west-2
+        id: jenkins-s3-log-ship
+        name: jenkins-s3-log-ship
+    - custom:
+        comment: JJB Config for Jenkins Job Builder
+        content: |
+          [job_builder]
+          ignore_cache=True
+          keep_descriptions=False
+          include_path=.:scripts:~/git/
+          recursive=True
+          retain_anchors=True
+
+          [jenkins]
+          user=$JOBBUILDER_PROD_USR
+          password=$JOBBUILDER_PROD_PSW
+          url=https://jenkins.onap.org
+          query_plugins_info=True
+
+          [production]
+          user=$JOBBUILDER_PROD_USR
+          password=$JOBBUILDER_PROD_PSW
+          url=https://jenkins.onap.org
+          query_plugins_info=True
+
+          [sandbox]
+          user=$JOBBUILDER_SANDBOX_USR
+          password=$JOBBUILDER_SANDBOX_PSW
+          url=https://jenkins.onap.org/sandbox
+          query_plugins_info=True
+        customizedCredentialMappings:
+        - credentialsId: jobbuilder-prod
+          tokenKey: JOBBUILDER_PROD
+        - credentialsId: jobbuilder-sandbox
+          tokenKey: JOBBUILDER_SANDBOX
+        id: jjbini
+        name: JJB Config
+    - custom:
+        comment: LFTOOLS config file
+        content: |
+          [nexus.onap.org]
+          username=$LFTOOLSINI_NEXUS_USR
+          password=$LFTOOLSINI_NEXUS_PSW
+          [nexus]
+          user=$JENKINS_RELEASE_USR
+          password=$JENKINS_RELEASE_PSW
+          [rtd]
+          endpoint=https://readthedocs.org/api/v3/
+          token=$RTD_TOKEN
+        customizedCredentialMappings:
+        - credentialsId: lftoolsini
+          tokenKey: JENKINS_RELEASE
+        - credentialsId: lftoolsini-nexus
+          tokenKey: LFTOOLSINI_NEXUS
+        - credentialsId: rtd-token
+          tokenKey: RTD_TOKEN
+        id: lftoolsini
+        name: lftoolsini
+    - custom:
+        comment: npmrc config file
+        content: |
+          registry=https://nexus3.onap.org/repository/npm.public/
+          strict-ssl=false
+          _auth=$NPM_PUBLIC_AUTH
+        customizedCredentialMappings:
+        - credentialsId: npm-public-auth
+          tokenKey: NPM_PUBLIC_AUTH
+        id: npmrc
+        name: npmrc
+    - custom:
+        comment: onap-pubkey
+        content: |
+          -----BEGIN PGP PUBLIC KEY BLOCK-----
+          Version: GnuPG v1
+
+          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
+          =fSzy
+          -----END PGP PUBLIC KEY BLOCK-----
+        id: onap-pubkey
+        name: onap-pubkey
+    - custom:
+        comment: Packer cloud environmnet config
+        content: |
+          {
+            "cloud_auth_url": "https://auth.vexxhost.net/v3/",
+            "cloud_tenant": "ef6e8825-fc3a-4ebf-886a-ba51ada06a9c",
+            "cloud_user": "$CLOUD_USR",
+            "cloud_pass": "$CLOUD_PSW",
+            "cloud_network": "bd089be9-e846-4afe-905b-8bb6c7c90faf",
+            "ssh_proxy_host": ""
+          }
+        customizedCredentialMappings:
+        - credentialsId: packer-cloud-user
+          tokenKey: CLOUD
+        id: packer-cloud-env
+        name: packer-cloud-env
+    - custom:
+        comment: Packer cloud environmnet HCL2 config
+        content: |
+          cloud_auth_url = "https://auth.vexxhost.net/v3/"
+          cloud_tenant = "ef6e8825-fc3a-4ebf-886a-ba51ada06a9c"
+          cloud_user = "$CLOUD_USR"
+          cloud_pass = "$CLOUD_PSW"
+          cloud_network = "bd089be9-e846-4afe-905b-8bb6c7c90faf"
+          ssh_proxy_host = ""
+        customizedCredentialMappings:
+        - credentialsId: packer-cloud-user
+          tokenKey: CLOUD
+        id: packer-cloud-env-hcl
+        name: packer-cloud-env-hcl
+    - custom:
+        comment: Pip config file
+        content: |
+          [global]
+          timeout = 60
+        id: pipconf
+        name: pipconf
+    - custom:
+        comment: PyPI config
+        content: |
+          [distutils]
+          index-servers =
+             staging
+             release
+             pypi-test
+             pypi
+             pypi-onapsdk
+
+          [staging]
+          repository: https://nexus3.onap.org/repository/PyPi.staging/
+          username: $PYPI_STAGING_RELEASE_USR
+          password: $PYPI_STAGING_RELEASE_PSW
+
+          [release]
+          repository: https://nexus3.onap.org/repository/PyPi.release/
+          username: $PYPI_STAGING_RELEASE_USR
+          password: $PYPI_STAGING_RELEASE_PSW
+
+          [wheel-alpine]
+          repository: https://nexus3.onap.org/repository/PyPi.wheel-alpine/
+          username: $PYPI_STAGING_RELEASE_USR
+          password: $PYPI_STAGING_RELEASE_PSW
+
+          [pypi-test]
+          repository: https://test.pypi.org/legacy/
+          username: __token__
+          password: $PYPI_TEST_TOKEN
+
+          [pypi]
+          repository: https://pypi.org/
+          username: __token__
+          password: $PYPI_TOKEN
+
+          [pypi-onapsdk]
+          repository: https://upload.pypi.org/legacy/
+          username: __token__
+          password: $ONAP_PYPI_TOKEN
+        customizedCredentialMappings:
+        - credentialsId: pypi-staging-release
+          tokenKey: PYPI_STAGING_RELEASE
+        - credentialsId: pypi-token
+          tokenKey: PYPI_TOKEN
+        - credentialsId: pypi-test-token
+          tokenKey: PYPI_TEST_TOKEN
+        - credentialsId: onap-pypi-api-key
+          tokenKey: ONAP_PYPI_TOKEN
+        id: pypirc
+        name: pypirc
+    - custom:
+        comment: SIGNING_PUBKEY
+        content: |
+          -----BEGIN PGP PUBLIC KEY BLOCK-----
+          Version: GnuPG v1
+
+          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
+          =b4Re
+          -----END PGP PUBLIC KEY BLOCK-----
+        id: signing-pubkey
+        name: SIGNING_PUBKEY
+    - custom:
+        comment: sigul-config
+        content: |
+          [client]
+          bridge-hostname: sigul-bridge-yul.linuxfoundation.org
+          bridge-port: 44334
+          client-cert-nickname: $SIGUL_CONFIG_USR
+          server-hostname: vex-yul-wl-sigul-server-1.dr.codeaurora.org
+          user-name: $SIGUL_CONFIG_USR
+
+          [koji]
+
+          [nss]
+          nss-dir: /home/jenkins/sigul
+          nss-password: $SIGUL_CONFIG_PSW
+          nss-min-tls: tls1.2
+          nss-max-tls: tls1.2
+        customizedCredentialMappings:
+        - credentialsId: sigul-config-credentials
+          tokenKey: SIGUL_CONFIG
+        id: sigul-config
+        name: sigul-config
+    - custom:
+        comment: sigul-password
+        content: |
+          $SIGUL_PASS
+        customizedCredentialMappings:
+        - credentialsId: sigul-pass
+          tokenKey: SIGUL_PASS
+        id: sigul-password
+        name: sigul-password
+    - custom:
+        comment: sigul-pki
+        content: |
+          $SIGUL_PKI
+        customizedCredentialMappings:
+        - credentialsId: sigul-pki
+          tokenKey: SIGUL_PKI
+        id: sigul-pki
+        name: sigul-pki
+    - custom:
+        comment: wss-unified-agent.config configuration file
+        content: |
+          ###############################################################
+          # WhiteSource Unified-Agent configuration file
+          ###############################################################
+          # GENERAL SCAN MODE: Files and Package Managers
+          ###############################################################
+          # Organization vitals
+          ######################
+
+          apiKey=$WSS_API_KEY
+          #userKey is required if WhiteSource administrator has enabled "Enforce user level access" option
+          #userKey=
+          #requesterEmail=user@provider.com
+
+          projectName=
+          projectVersion=
+          projectToken=
+
+          productName=
+          productVersion=
+          productToken=
+
+          projectPerFolder=false
+          #projectPerFolderIncludes=
+          #projectPerFolderExcludes=
+
+          wss.connectionTimeoutMinutes=80
+
+          # Change the below URL to your WhiteSource server.
+          # Use the 'WhiteSource Server URL' which can be retrieved
+          # from your 'Profile' page on the 'Server URLs' panel.
+          # Then, add the '/agent' path to it.
+          wss.url=https://saas.whitesourcesoftware.com/agent
+          #wss.url=https://app.whitesourcesoftware.com/agent
+          #wss.url=https://app-eu.whitesourcesoftware.com/agent
+
+          ############
+          # Policies #
+          ############
+          checkPolicies=false
+          forceCheckAllDependencies=false
+          forceUpdate=false
+          forceUpdate.failBuildOnPolicyViolation=false
+          #updateInventory=false
+
+          ###########
+          # General #
+          ###########
+          #offline=true
+          #updateType=APPEND
+          #ignoreSourceFiles=true
+          #scanComment=
+          #failErrorLevel=ALL
+          #requireKnownSha1=false
+          log.files.level=Debug
+          log.level=debug
+
+          #generateProjectDetailsJson=true
+          #generateScanReport=true
+          #scanReportTimeoutMinutes=10
+          #scanReportFilenameFormat=
+
+          #analyzeFrameworks=true
+          #analyzeFrameworksReference=
+
+          #updateEmptyProject=false
+
+          ########################################
+          # Package Manager Dependency resolvers #
+          ########################################
+          resolveAllDependencies=true
+          #excludeDependenciesFromNodes=.*commons-io.*,.*maven-model
+
+          #npm.resolveDependencies=false
+          #npm.ignoreSourceFiles=false
+          #npm.includeDevDependencies=true
+          #npm.runPreStep=true
+          #npm.ignoreNpmLsErrors=true
+          #npm.ignoreScripts=true
+          #npm.yarnProject=true
+          #npm.accessToken=
+          npm.identifyByNameAndVersion=true
+          #npm.yarn.frozenLockfile=true
+          #npm.resolveMainPackageJsonOnly=true
+          #npm.removeDuplicateDependencies=false
+          #npm.resolveAdditionalDependencies=true
+
+          #bower.resolveDependencies=false
+          #bower.ignoreSourceFiles=true
+          #bower.runPreStep=true
+
+          #nuget.resolvePackagesConfigFiles=false
+          #nuget.resolveCsProjFiles=false
+          #nuget.resolveDependencies=false
+          #nuget.restoreDependencies=true
+          #nuget.preferredEnvironment=
+          #nuget.packagesDirectory=
+          #nuget.ignoreSourceFiles=false
+          #nuget.runPreStep=true
+          #nuget.resolveNuspecFiles=false
+
+          #python.resolveDependencies=false
+          #python.ignoreSourceFiles=false
+          #python.ignorePipInstallErrors=true
+          #python.installVirtualenv=true
+          #python.resolveHierarchyTree=false
+          #python.requirementsFileIncludes=requirements.txt
+          #python.resolveSetupPyFiles=true
+          #python.runPipenvPreStep=true
+          #python.pipenvDevDependencies=true
+          #python.IgnorePipenvInstallErrors=true
+
+          #maven.ignoredScopes=test provided
+          maven.resolveDependencies=true
+          #maven.ignoreSourceFiles=true
+          maven.aggregateModules=true
+          #maven.ignorePomModules=false
+          maven.runPreStep=false
+          maven.ignoreMvnTreeErrors=true
+          maven.environmentPath=/w/tools/hudson.tasks.Maven_MavenInstallation/mvn36/bin/
+          maven.m2RepositoryPath=/home/jenkins/
+          #maven.downloadMissingDependencies=false
+          maven.additionalArguments=-s=global-settings.xml
+
+          #gradle.ignoredScopes=
+          #gradle.resolveDependencies=false
+          #gradle.runAssembleCommand=false
+          #gradle.runPreStep=true
+          #gradle.ignoreSourceFiles=true
+          #gradle.aggregateModules=true
+          #gradle.preferredEnvironment=wrapper
+          #gradle.localRepositoryPath=
+          #gradle.wrapperPath=
+          #gradle.downloadMissingDependencies=false
+          #gradle.additionalArguments=
+          #gradle.includedScopes=
+
+          #paket.resolveDependencies=false
+          #paket.ignoredGroups=
+          #paket.ignoreSourceFiles=false
+          #paket.runPreStep=true
+          #paket.exePath=
+
+          #go.resolveDependencies=false
+          #go.collectDependenciesAtRuntime=true
+          #go.dependencyManager=
+          #go.ignoreSourceFiles=true
+          #go.glide.ignoreTestPackages=false
+          #go.gogradle.enableTaskAlias=true
+
+          #ruby.resolveDependencies=false
+          #ruby.ignoreSourceFiles=false
+          #ruby.installMissingGems=true
+          #ruby.runBundleInstall=true
+          #ruby.overwriteGemFile=true
+
+          #sbt.resolveDependencies=false
+          #sbt.ignoreSourceFiles=true
+          #sbt.aggregateModules=true
+          #sbt.runPreStep=true
+          #sbt.targetFolder=
+
+          #php.resolveDependencies=false
+          #php.runPreStep=true
+          #php.includeDevDependencies=true
+
+          #html.resolveDependencies=false
+
+          #cocoapods.resolveDependencies=false
+          #cocoapods.runPreStep=true
+          #cocoapods.ignoreSourceFiles=false
+
+          #hex.resolveDependencies=false
+          #hex.runPreStep=true
+          #hex.ignoreSourceFiles=false
+          #hex.aggregateModules=true
+
+          #ant.resolveDependencies=false
+          #ant.pathIdIncludes=.*
+          #ant.external.parameters=
+
+          #r.resolveDependencies=false
+          #r.runPreStep=true
+          #r.ignoreSourceFiles=false
+          #r.cranMirrorUrl=
+
+          #cargo.resolveDependencies=false
+          #cargo.runPreStep=true
+          #cargo.ignoreSourceFiles=false
+
+          ###########################################################################################
+          # Includes/Excludes Glob patterns - Please use only one exclude line and one include line #
+          ###########################################################################################
+          includes=**/*.c **/*.java **/*.cc **/*.cp **/*.cpp **/*.cxx **/*.c++ **/*.h **/*.hpp **/*.hxx **/*.go **/*.py **/*.js **/*.jar **/*.tgz **/*.deb **/*.gzip **/*.rpm **/*.tar.bz2 **/*.zip **/*.tar.gz **/*.egg **/*.whl
+
+          #includes=**/*.m **/*.mm  **/*.js **/*.php
+          #includes=**/*.jar
+          #includes=**/*.gem **/*.rb
+          #includes=**/*.dll **/*.cs **/*.nupkg
+          #includes=**/*.tgz **/*.deb **/*.gzip **/*.rpm **/*.tar.bz2
+          #includes=**/*.zip **/*.tar.gz **/*.egg **/*.whl **/*.py
+
+          #Exclude file extensions or specific directories by adding **/*.<extension> or **/<excluded_dir>/**
+          excludes=**/*sources.jar **/*javadoc.jar
+
+          case.sensitive.glob=false
+          followSymbolicLinks=true
+
+          ######################
+          # Archive properties #
+          ######################
+          #archiveExtractionDepth=4
+          #archiveIncludes=**/*.war **/*.ear
+          #archiveExcludes=**/*sources.jar
+
+          ##############
+          # SCAN MODES #
+          ##############
+
+          # Docker images
+          ################
+          #docker.scanImages=true
+          #docker.includes=.*.*
+          #docker.excludes=
+          #docker.pull.enable=true
+          #docker.pull.images=.*.*
+          #docker.pull.maxImages=10
+          #docker.pull.tags=.*.*
+          #docker.pull.digest=
+          #docker.delete.force=true
+          #docker.login.sudo=false
+          #docker.projectNameFormat=default
+
+          #docker.aws.enable=true
+          #docker.aws.registryIds=
+
+          #docker.azure.enable=true
+          #docker.azure.userName=
+          #docker.azure.userPassword=
+          #docker.azure.registryNames=
+
+          #docker.artifactory.enable=true
+          #docker.artifactory.url=
+          #docker.artifactory.userName=
+          #docker.artifactory.userPassword=
+          #docker.artifactory.repositoriesNames=
+          #docker.artifactory.dockerAccessMethod=
+
+          #docker.hub.enabled=true
+          #docker.hub.userName=
+          #docker.hub.userPassword=
+          #docker.hub.organizationsNames=
+
+          # Docker containers
+          ####################
+          #docker.scanContainers=true
+          #docker.containerIncludes=.*.*
+          #docker.containerExcludes=
+
+          # Linux package manager settings
+          ################################
+          #scanPackageManager=true
+
+          # Serverless settings
+          ######################
+          #serverless.provider=
+          #serverless.scanFunctions=true
+          #serverless.includes=
+          #serverless.excludes=
+          #serverless.region=
+          #serverless.maxFunctions=10
+
+          # Artifactory settings
+          ########################
+          #artifactory.enableScan=true
+          #artifactory.url=
+          #artifactory.accessToken=
+          #artifactory.repoKeys=
+          #artifactory.userName=
+          #artifactory.userPassword=
+
+          ##################
+          # Proxy settings #
+          ##################
+          #proxy.host=
+          #proxy.port=
+          #proxy.user=
+          #proxy.pass=
+
+          ################
+          # SCM settings #
+          ################
+          #scm.type=
+          #scm.user=
+          #scm.pass=
+          #scm.ppk=
+          #scm.url=
+          #scm.branch=
+          #scm.tag=
+          #scm.npmInstall=
+          #scm.npmInstallTimeoutMinutes=
+          #scm.repositoriesFile=
+        customizedCredentialMappings:
+        - credentialsId: wss-api-key
+          tokenKey: WSS_API_KEY
+        id: wss-unified-agent.config
+        name: wss-unified-agent.config

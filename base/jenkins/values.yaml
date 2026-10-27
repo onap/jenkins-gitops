@@ -1,0 +1,125 @@
+---
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-FileCopyrightText: 2026 ONAP Contributors
+# Base values shared by every environment. Environment files
+# (sandbox/values.yaml, production/values.yaml, local/values.yaml) override
+# image tag, URLs, sizing, ingress and the SILO-specific variables.
+#
+# Everything under `jenkins:` is passed to the official Jenkins chart.
+
+jenkins:
+  # Fixed resource name. The JCasC ConfigMaps carry the label
+  # "<fullname>-jenkins-config", which the config-reload sidecar watches, so
+  # the name must be predictable (see templates/jcasc-configmaps.yaml).
+  fullnameOverride: jenkins
+
+  controller:
+    image:
+      registry: ghcr.io
+      repository: onap/jenkins
+      # tag: set per environment
+      pullPolicy: IfNotPresent
+
+    # All plugins are baked into the image at pinned versions (build/plugins.txt).
+    installPlugins: false
+
+    # Job workloads run on OpenStack agents; the controller runs nothing.
+    numExecutors: 0
+
+    # No local admin user: the security realm is SAML, defined in JCasC.
+    # createSecret=false also keeps the chart from setting its own SECRETS
+    # env var, which we point at the JCasC Secret mount below.
+    admin:
+      createSecret: false
+
+    JCasC:
+      # The chart's generated config conflicts with the exported one.
+      defaultConfig: false
+      # JCasC files live in jcasc/*.yaml, not in configScripts.
+
+    # Same JVM flags as the current VM. Heap sizes differ per environment and
+    # come from the JENKINS_JVM_HEAP variable, which Kubernetes expands here
+    # because containerEnv entries precede JAVA_OPTS in the pod spec.
+    javaOpts: >-
+      $(JENKINS_JVM_HEAP)
+      -XX:+AlwaysPreTouch
+      -XX:+UseG1GC
+      -XX:+ExplicitGCInvokesConcurrent
+      -XX:+ParallelRefProcEnabled
+      -XX:+UseStringDeduplication
+      -XX:+UnlockExperimentalVMOptions
+      -XX:G1NewSizePercent=20
+      -XX:+UnlockDiagnosticVMOptions
+      -XX:G1SummarizeRSetStatsPeriod=1
+      -XX:+DisableExplicitGC
+      -Dhudson.model.ParametersAction.safeParameters=GERRIT_EVENT_TYPE,GERRIT_EVENT_HASH,GERRIT_BRANCH,GERRIT_TOPIC,GERRIT_CHANGE_NUMBER,GERRIT_CHANGE_ID,GERRIT_PATCHSET_NUMBER,GERRIT_PATCHSET_REVISION,GERRIT_REFSPEC,GERRIT_PROJECT,GERRIT_CHANGE_SUBJECT,GERRIT_CHANGE_COMMIT_MESSAGE,GERRIT_CHANGE_URL,GERRIT_CHANGE_OWNER,GERRIT_CHANGE_OWNER_NAME,GERRIT_CHANGE_OWNER_EMAIL,GERRIT_PATCHSET_UPLOADER,GERRIT_PATCHSET_UPLOADER_NAME
+
+    # containerEnv is a list, and Helm replaces lists instead of merging them,
+    # so every environment file carries the complete list. Each one must set:
+    #   SECRETS               /run/secrets/jcasc  (JCasC ${key} lookups; one
+    #                         file per key, mounted from the Secret below)
+    #   GERRIT_AUTH_KEY_FILE  /run/secrets/jcasc/gerrit-trigger-ssh-key
+    #   JENKINS_JVM_HEAP      e.g. "-Xmx6G -Xms2G"
+    #   JENKINS_URL, JENKINS_ADMIN_ADDRESS, SILO, JENKINS_HOSTNAME,
+    #   SIGUL_KEY, MASTER_RTD_PROJECT   (consumed by jcasc/*.yaml)
+
+    # 162 plugins take a while to start; give the probe more room than the
+    # chart default (12 x 10s).
+    probes:
+      startupProbe:
+        failureThreshold: 60
+        periodSeconds: 10
+
+    # Jenkins has 1497 jobs; the chart's defaults are sized for a demo.
+    # Sizes are set per environment.
+
+    testEnabled: false
+
+    # Ingress class and TLS issuer are not set: the target is a Kubernetes
+    # cluster on Vexxhost that does not exist yet. Set ingressClassName and
+    # annotations here once the cluster's ingress controller is known.
+    ingress:
+      enabled: true
+      apiVersion: networking.k8s.io/v1
+
+  agent:
+    # Agents are OpenStack VMs managed by the openstack-cloud plugin (JCasC),
+    # not Kubernetes pods.
+    enabled: false
+
+  persistence:
+    enabled: true
+    # storageClass is not set: uses the cluster default until the Vexxhost
+    # cluster's storage classes are known. Size per env.
+    volumes:
+      - name: jcasc-secrets
+        secret:
+          secretName: jenkins-jcasc-secrets
+    mounts:
+      - name: jcasc-secrets
+        mountPath: /run/secrets/jcasc
+        readOnly: true
+
+  rbac:
+    create: true
+  serviceAccount:
+    create: true
+
+# JCasC files from jcasc/ shipped as ConfigMaps (templates/jcasc-configmaps.yaml).
+jcasc:
+  # File names to leave out. An environment that cannot use SAML excludes
+  # 15-auth.yaml and provides its own realm through controller.JCasC.configScripts.
+  excludeFiles: []
+
+# jenkins-jcasc-secrets assembled by External Secrets Operator
+# (templates/external-secret.yaml) from the keys in secret-keys.txt.
+externalSecrets:
+  enabled: true
+  # SecretStore in the release namespace. Name follows the LF convention used
+  # by the POC (1Password, "Release Engineering" vault); confirm for Vexxhost.
+  storeName: onepassword-releng
+  refreshInterval: 1h
+  # printf format turning a key into the store's remote key.
+  remoteKeyFormat: "onap-jenkins/%s"
+  # Keys needed by an environment's own configScripts, beyond secret-keys.txt.
+  extraKeys: []
