@@ -1,0 +1,86 @@
+---
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-FileCopyrightText: 2026 ONAP Contributors
+# Local: k3d cluster on a developer machine. Not deployed by ArgoCD.
+#
+# Differences from the real environments:
+#   - image built locally and imported into k3d (local/README.md)
+#   - no ingress; use `kubectl port-forward`
+#   - SAML is replaced by a local admin user, and the LF group based matrix
+#     authorisation by "logged-in users can do anything": 15-auth.yaml is
+#     excluded and zz-local-auth supplies the replacement
+#   - secrets are dummies served by an ESO "fake" SecretStore built from
+#     base/jenkins/secret-keys.txt
+
+jenkins:
+  controller:
+    image:
+      registry: docker.io
+      repository: library/onap-jenkins
+      tag: local
+      pullPolicy: Never
+
+    resources:
+      requests:
+        cpu: "1"
+        memory: 3Gi
+      limits:
+        cpu: "2"
+        memory: 4Gi
+
+    containerEnv:
+      - name: SECRETS
+        value: /run/secrets/jcasc
+      - name: GERRIT_AUTH_KEY_FILE
+        value: /run/secrets/jcasc/gerrit-trigger-ssh-key
+      - name: JENKINS_JVM_HEAP
+        value: -Xmx2G -Xms1G
+      - name: JENKINS_URL
+        value: http://localhost:8080/
+      - name: JENKINS_ADMIN_ADDRESS
+        value: Jenkins <donotreply@localhost>
+      - name: SILO
+        value: local
+      - name: JENKINS_HOSTNAME
+        value: local
+      - name: SIGUL_KEY
+        value: local
+      - name: MASTER_RTD_PROJECT
+        value: doc-test
+
+    JCasC:
+      configScripts:
+        # Replaces base/jenkins/jcasc/15-auth.yaml (excluded below).
+        zz-local-auth: |
+          jenkins:
+            securityRealm:
+              local:
+                allowsSignup: false
+                users:
+                  - id: admin
+                    password: "${local-admin-password}"
+            authorizationStrategy:
+              loggedInUsersCanDoAnything:
+                allowAnonymousRead: true
+
+    ingress:
+      enabled: false
+    # Reachable on http://localhost:8080 through the k3d port mapping.
+    serviceType: NodePort
+    nodePort: 30080
+
+  persistence:
+    size: 8Gi
+
+jcasc:
+  excludeFiles:
+    - 15-auth.yaml
+
+# Local secret store: ESO's built-in "fake" provider, so the same
+# ExternalSecret path is exercised as in the real environments.
+# local/fake-secret-store.yaml creates the store from secret-keys.txt.
+externalSecrets:
+  storeName: fake-local
+  remoteKeyFormat: "%s"
+  extraKeys:
+    - local-admin-password

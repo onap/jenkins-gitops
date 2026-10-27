@@ -1,0 +1,30 @@
+---
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-FileCopyrightText: 2026 ONAP Contributors
+# ArgoCD Application for the local k3d cluster. Same shape as
+# argocd-apps/*.yaml, but sourced from the in-cluster git server that
+# local/cluster-up.sh fills with the working tree.
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: jenkins-local
+  namespace: argocd
+spec:
+  # The "default" project allows the in-cluster git server as a source.
+  project: default
+  source:
+    repoURL: git://git-server.git.svc/jenkins-gitops.git
+    targetRevision: main
+    path: base/jenkins
+    helm:
+      releaseName: jenkins
+      valueFiles:
+        - values.yaml
+        - ../../local/values.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: jenkins-local
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
