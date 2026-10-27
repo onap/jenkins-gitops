@@ -10,7 +10,7 @@
 #     authorisation by "logged-in users can do anything": 15-auth.yaml is
 #     excluded and zz-local-auth supplies the replacement
 #   - secrets are dummies served by an ESO "fake" SecretStore built from
-#     base/jenkins/secret-keys.txt
+#     base/jenkins/secret-keys.txt (a stand-in; no secret solution is chosen)
 
 jenkins:
   controller:
@@ -76,10 +76,11 @@ jcasc:
   excludeFiles:
     - 15-auth.yaml
 
-# Local secret store: ESO's built-in "fake" provider, so the same
-# ExternalSecret path is exercised as in the real environments.
-# local/fake-secret-store.yaml creates the store from secret-keys.txt.
+# Local stand-in for the Secret: ESO's built-in "fake" provider, fed by
+# local/make-fake-secret-store.sh from secret-keys.txt. A test convenience,
+# not the chosen secret solution.
 externalSecrets:
+  enabled: true
   storeName: fake-local
   remoteKeyFormat: "%s"
   extraKeys:

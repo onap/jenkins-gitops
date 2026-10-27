@@ -111,15 +111,16 @@ jcasc:
   # 15-auth.yaml and provides its own realm through controller.JCasC.configScripts.
   excludeFiles: []
 
-# jenkins-jcasc-secrets assembled by External Secrets Operator
+# Optional: assemble jenkins-jcasc-secrets with External Secrets Operator
 # (templates/external-secret.yaml) from the keys in secret-keys.txt.
+# Off by default: how the Secret is populated on the OpenStack cluster is
+# not decided. The local environment turns it on with a fake store.
 externalSecrets:
-  enabled: true
-  # SecretStore in the release namespace. Name follows the LF convention used
-  # by the POC (1Password, "Release Engineering" vault); confirm for Vexxhost.
-  storeName: onepassword-releng
+  enabled: false
+  # SecretStore in the release namespace.
+  storeName: ""
   refreshInterval: 1h
   # printf format turning a key into the store's remote key.
-  remoteKeyFormat: "onap-jenkins/%s"
+  remoteKeyFormat: "%s"
   # Keys needed by an environment's own configScripts, beyond secret-keys.txt.
   extraKeys: []
